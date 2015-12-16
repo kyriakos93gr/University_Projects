@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define N 25333
 #define dict_length 4096
@@ -21,48 +22,62 @@ void read_sequence(int image[N])
     fclose(infile);
 }
 
-void create_dictionary(char dictionary[]){
-    dictionary[0] = 32;
-    for (int i = 1; i < 126-31; i++)
+void create_dictionary(char *dictionary[], int *last_word){
+    dictionary[0] = " ";
+    for (int i = 1; i < 126-31; i++){
         dictionary[i] = dictionary[i-1] + 1;
-}
-
-double check_word(char dictionary[], char word_to_find){
-    for (int i = 0; i < dict_length; i++)
-    {
-        if (dictionary[i] == word_to_find){
-            break;
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
+        printf("%c ", dictionary[i]);
+        *last_word = i;
     }
 }
+
+bool check_word(char *dictionary[], char word_to_find[]){
+    char tmp[] = "\0";
+    for (int i = 0; i < dict_length; i++)
+    {
+        tmp[0] = *dictionary[i];
+        if (strcmp(tmp, word_to_find)){
+            return true;
+            break;
+        }
+        else
+            return false;
+    }
+}
+
+// void add_word(char dictionary[], char word_to_add[])
+// {
+//     dictionary[i+1] = word_to_add[];
+// }
 
 int main()
 {
     char P[] = "\0";
-    char C[] = "2";
+    char C[] = "\0";
+    int last_word = 0;
+    bool exists = false;
 
     static int image_array[N];
-    static char dictionary[dict_length];
+    char *dictionary[dict_length];
     read_sequence(image_array);
-    create_dictionary(dictionary);
+    create_dictionary(dictionary, &last_word);
+    printf("%d",dictionary[50]);
     for (int i = 0; i < N; i++)
     {
         C[0] = image_array[i];
         strcat(P, C);
-        double exists = check_word(dictionary, *P);
-        printf("%d", exists);
-    }
+        exists = check_word(dictionary, P);
 
+    }
     char a = 'a';
     char b = 'b';
     char sum = 49;
 
-    printf("%c",*P);
+    //C[0] = image_array[2];
+    //strcpy(C, P);
+    //printf("%s", C);
+
+    //printf("%c",*P);
 }
 //;;;;9;$<>=>??=>>>>>>>>>??>>>>>@??;
 
