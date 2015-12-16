@@ -23,10 +23,13 @@ void read_sequence(int image[N])
 }
 
 void create_dictionary(char *dictionary[], int *last_word){
-    dictionary[0] = " ";
-    for (int i = 1; i < 126-31; i++){
-        dictionary[i] = dictionary[i-1] + 1;
-        printf("%c ", dictionary[i]);
+    char tmp[] = "\0";
+    tmp[0] = 32;
+    dictionary[0] = tmp;
+    for (int i = 1; i < 126-31; i++)
+    {
+        tmp[0] = tmp[0] + 1;
+        dictionary[i] = tmp;
         *last_word = i;
     }
 }
@@ -45,10 +48,11 @@ bool check_word(char *dictionary[], char word_to_find[]){
     }
 }
 
-// void add_word(char dictionary[], char word_to_add[])
-// {
-//     dictionary[i+1] = word_to_add[];
-// }
+void add_word(char *dictionary[], char word_to_add[], int *last_word)
+{
+    dictionary[*last_word+1] = word_to_add;
+    *last_word = *last_word + 1;
+}
 
 int main()
 {
@@ -58,20 +62,29 @@ int main()
     bool exists = false;
 
     static int image_array[N];
-    char *dictionary[dict_length];
+    static char *dictionary[dict_length];
     read_sequence(image_array);
     create_dictionary(dictionary, &last_word);
-    printf("%d",dictionary[50]);
+    printf("%c",*dictionary[5]);
+
     for (int i = 0; i < N; i++)
     {
         C[0] = image_array[i];
         strcat(P, C);
         exists = check_word(dictionary, P);
+        if (exists)
+        {
+            
+        }
 
     }
     char a = 'a';
     char b = 'b';
     char sum = 49;
+
+    printf("%d\n", last_word);
+    add_word(dictionary, "abc", &last_word);
+    printf("%d\n", last_word);
 
     //C[0] = image_array[2];
     //strcpy(C, P);
