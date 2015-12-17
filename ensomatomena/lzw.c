@@ -34,18 +34,30 @@ void create_dictionary(char *dictionary[], int *last_word){
     }
 }
 
-bool check_word(char *dictionary[], char word_to_find[]){
-    char tmp[] = "\0";
-    for (int i = 0; i < dict_length; i++)
+bool check_word(char *dictionary[], char word_to_find[], int *last_word){
+    for (int i = 0; i < *last_word + 1; i++)
     {
-        tmp[0] = *dictionary[i];
-        if (strcmp(tmp, word_to_find)){
+        if (dictionary[i] == word_to_find)
+        {
             return true;
             break;
         }
         else
             return false;
     }
+}
+
+int p_position(char *dictionary[], char word_to_search[], int *last_word)
+{
+for (int i = 0; i < *last_word + 1; i++)
+{
+    if (word_to_search==dictionary[i])
+    {
+        return i;
+        break;
+    }
+}
+
 }
 
 void add_word(char *dictionary[], char word_to_add[], int *last_word)
@@ -61,32 +73,41 @@ int main()
     int last_word = 0;
     bool exists = false;
 
-    static int image_array[N];
+    static int image[N];
+    static int image_output[N];
     static char *dictionary[dict_length];
-    read_sequence(image_array);
+    read_sequence(image);
     create_dictionary(dictionary, &last_word);
-    printf("%c",*dictionary[5]);
-
+    // printf("%c",*dictionary[5]);
+    //add_word(dictionary, "absds", &last_word);
+    int count = 0;
     for (int i = 0; i < N; i++)
     {
-        C[0] = image_array[i];
+        C[0] = image[i];
         strcat(P, C);
-        exists = check_word(dictionary, P);
-        if (exists)
+        exists = check_word(dictionary, P, &last_word);
+        if (!exists)
         {
-            
+            add_word(dictionary, P, &last_word);
+            image_output[count] = p_position(dictionary, P, &last_word);
+            count = count + 1;
+            printf("%d \n", count);
+            strcpy(P, C);
         }
-
     }
     char a = 'a';
     char b = 'b';
     char sum = 49;
+    // for (int i=0; i<150; i++)
+    // {
+    //     printf("%d\n",image_output[i]);
+    //     printf("%s\n",dictionary[i]);
+    // }
+    // printf("%d\n", last_word);
+    // add_word(dictionary, "abc", &last_word);
+    // printf("%d\n", last_word);
 
-    printf("%d\n", last_word);
-    add_word(dictionary, "abc", &last_word);
-    printf("%d\n", last_word);
-
-    //C[0] = image_array[2];
+    //C[0] = image[2];
     //strcpy(C, P);
     //printf("%s", C);
 
