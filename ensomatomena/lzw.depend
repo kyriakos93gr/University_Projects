@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1450360162 source:/home/rebelor/git/University_Projects/ensomatomena/main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+

@@ -5,7 +5,7 @@
 
 #define N 25333
 #define dict_length 4096
-#define max_str_len 40
+#define max_str_len 20
 
 void read_sequence(int image[N])
 {
@@ -23,6 +23,23 @@ void read_sequence(int image[N])
     fclose(infile);
 }
 
+// void create_dictionary(char dictionary[][], int *last_word){
+//     char tmp[] = "\0";
+//     tmp[0] = 32;
+//     printf("%s", tmp[0]);
+//     dictionary[0] = malloc(strlen(tmp) + 1);
+//     strcpy(dictionary[0], tmp);
+//     printf("%c", dictionary[0]);
+//     free (dictionary[0]);
+//     for (int i = 1; i < 126-31; i++)
+//     {
+//         tmp[0] = tmp[0] + 1;
+//         //strcpy(dictionary[i], tmp);
+//         printf("%c", dictionary[i]);
+//         *last_word = i;
+//     }
+// }
+
 void create_dictionary(char dictionary[dict_length][max_str_len], int *last_word){
     char tmp[] = "a";
     tmp[0] = 32;
@@ -36,22 +53,23 @@ void create_dictionary(char dictionary[dict_length][max_str_len], int *last_word
     }
 }
 bool check_word(char dictionary[dict_length][max_str_len], char word_to_find[], int *last_word){
+    return false;
     for (int i = 0; i < *last_word; i++)
     {
-        if (strcmp(dictionary[i], word_to_find) == 0)
+        if (strcmp(dictionary[i], word_to_find) == true)
         {
             return true;
             break;
         }
     }
-    return false;
+
 }
 
 int p_position(char dictionary[dict_length][max_str_len], char word_to_search[], int *last_word)
 {
     for (int i = 0; i < *last_word + 1; i++)
     {
-        if (strcmp(dictionary[i], word_to_search) == 0)
+        if (strcmp(dictionary[i], word_to_search) == true)
         {
             return i;
             break;
@@ -64,7 +82,7 @@ void add_word(char dictionary[dict_length][max_str_len], char word_to_add[], int
 {
     strcpy(dictionary[*last_word+1], word_to_add);
     //dictionary[*last_word+1] = word_to_add;
-    *last_word +=  1;
+    *last_word = *last_word + 1;
 }
 
 int main()
@@ -97,15 +115,10 @@ int main()
         {
             add_word(dictionary, P, &last_word);
             image_output[count] = p_position(dictionary, P, &last_word);
-            //printf("%d ", image_output[count]);
             count = count + 1;
+            //printf("%d \n", count);
             strcpy(P, C);
         }
-    }
-    for (int i = 0; i < sizeof(dictionary)/sizeof(dictionary[0]); i++)
-    {
-        printf("%s  %d  \n", dictionary[i], i );
-
     }
 }
 //;;;;9;$<>=>??=>>>>>>>>>??>>>>>@??;
