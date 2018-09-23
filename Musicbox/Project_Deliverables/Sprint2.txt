@@ -1,0 +1,9 @@
+Sprint 2
+
+- Samples cut, added and organised
+
+- Samples play, loop, and pause 
+
+- global stop button
+
+- artwork for samples added

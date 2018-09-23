@@ -1,0 +1,8 @@
+Sprint 3
+
+- Website hosted on server
+
+- Social media connect buttons
+
+- artwork for stop / record buttons added
+

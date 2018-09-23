@@ -1,0 +1,9 @@
+Sprint 1
+
+- Requirements for whole project
+
+- Logo
+
+- GUI design
+
+- Website design and full implementation
