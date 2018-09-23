@@ -1,0 +1,33 @@
+/home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd {0 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer
+-- Compiling architecture rtl of ram_infer
+-- Compiling entity program_counter
+-- Compiling architecture pcArch of program_counter
+-- Compiling entity controller
+-- Compiling architecture conArch of controller
+-- Compiling entity cpu
+-- Compiling architecture cpuArch of cpu
+-- Compiling entity top_level
+-- Compiling architecture bhv of top_level
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(251): near "is": expecting ';'
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(254): near "in": syntax error
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(255): Statement cannot be labeled.
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(255): near "in": syntax error
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(256): Statement cannot be labeled.
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(256): near "in": syntax error
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(257): Statement cannot be labeled.
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(257): near "in": syntax error
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(258): Statement cannot be labeled.
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(258): near "in": syntax error
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(259): Statement cannot be labeled.
+** Error: /home/kyriakos/git/vlsi/Lab2_Processor/project/ram_test.vhd(259): near "out": syntax error
+
+} {20.0 32.0} {}}

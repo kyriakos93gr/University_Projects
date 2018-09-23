@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, /home/kyriakos/vlsi/lab2.vhd
+source_file = 1, /home/kyriakos/quartus/diff_out.mif
+source_file = 1, /home/kyriakos/vlsi/db/lab2.cbx.xml
+source_file = 1, /home/kyriakos/altera/12.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /home/kyriakos/altera/12.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /home/kyriakos/altera/12.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /home/kyriakos/altera/12.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = lab2
+instance = comp, \clk~I\, clk, lab2, 1
+instance = comp, \rst~I\, rst, lab2, 1
+instance = comp, \led_1~I\, led_1, lab2, 1
+instance = comp, \led_2~I\, led_2, lab2, 1
+instance = comp, \led_3~I\, led_3, lab2, 1
+instance = comp, \led_4~I\, led_4, lab2, 1

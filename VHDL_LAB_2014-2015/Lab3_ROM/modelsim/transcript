@@ -1,0 +1,253 @@
+# Loading project toplevel
+cd /home/kyriakos/git/vlsi/Lab3_ROM/modelsim
+# reading /home/kyriakos/altera/14.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project toplevel
+# Compile of paneldisplay.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of toplevel.vhd was successful.
+# Compile of char_rom.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb
+# vsim 
+# Start time: 15:17:04 on May 19,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb(test)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+quit -sim
+vsim work.tb
+# vsim 
+# Start time: 15:17:24 on May 19,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb(test)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+restart -f
+add wave -position insertpoint sim:/tb/dutx/*
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+# Compile of paneldisplay.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of toplevel.vhd was successful.
+# Compile of char_rom.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.tb(test)
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of paneldisplay.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of toplevel.vhd was successful.
+# Compile of char_rom.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.tb(test)
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dutx/disp
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of paneldisplay.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of toplevel.vhd was successful.
+# Compile of char_rom.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.tb(test)
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+# Compile of paneldisplay.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of toplevel.vhd was successful.
+# Compile of char_rom.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.toplevel
+# vsim 
+# Start time: 16:13:12 on May 19,2015
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+add wave -position insertpoint  \
+sim:/toplevel/disp/clk \
+sim:/toplevel/disp/rst \
+sim:/toplevel/disp/hsync \
+sim:/toplevel/disp/vsync \
+sim:/toplevel/disp/address \
+sim:/toplevel/disp/data \
+sim:/toplevel/disp/red \
+sim:/toplevel/disp/green \
+sim:/toplevel/disp/blue \
+sim:/toplevel/disp/a \
+sim:/toplevel/disp/b \
+sim:/toplevel/disp/pixelclock \
+sim:/toplevel/disp/pixelcounter \
+sim:/toplevel/disp/linecounter \
+sim:/toplevel/disp/reg \
+sim:/toplevel/disp/reg_counter \
+sim:/toplevel/disp/state \
+sim:/toplevel/disp/HP \
+sim:/toplevel/disp/HFP \
+sim:/toplevel/disp/HBP \
+sim:/toplevel/disp/HSP \
+sim:/toplevel/disp/VP \
+sim:/toplevel/disp/VFP \
+sim:/toplevel/disp/VBP \
+sim:/toplevel/disp/VSP
+force -freeze sim:/toplevel/disp/clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /toplevel/clk as root of /toplevel/disp/clk specified in the force.
+force -freeze sim:/toplevel/disp/rst 0 0 -cancel 150
+# ** Warning: (vsim-8780) Forcing /toplevel/rst as root of /toplevel/disp/rst specified in the force.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /toplevel/disp
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /toplevel/disp
+# Compile of paneldisplay.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of toplevel.vhd was successful.
+# Compile of char_rom.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+force -freeze sim:/toplevel/disp/clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /toplevel/clk as root of /toplevel/disp/clk specified in the force.
+force -freeze sim:/toplevel/disp/rst 0 0 -cancel 150
+# ** Warning: (vsim-8780) Forcing /toplevel/rst as root of /toplevel/disp/rst specified in the force.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /toplevel/disp
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /toplevel/disp
+# Compile of paneldisplay.vhd was successful.
+# Compile of tb.vhd was successful.
+# Compile of toplevel.vhd was successful.
+# Compile of char_rom.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# Loading work.toplevel(bhv)
+# Loading work.char_rom(rtl)
+# Loading work.paneldisplay(syncing)
+force -freeze sim:/toplevel/disp/clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /toplevel/clk as root of /toplevel/disp/clk specified in the force.
+force -freeze sim:/toplevel/disp/rst 0 0 -cancel 150
+# ** Warning: (vsim-8780) Forcing /toplevel/rst as root of /toplevel/disp/rst specified in the force.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /toplevel/disp
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /toplevel/disp
+run
+run
+run

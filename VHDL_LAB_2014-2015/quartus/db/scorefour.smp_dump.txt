@@ -1,0 +1,17 @@
+
+State Machine - |scorefour|interrupt_controller:int|state
+Name state.WAIT_ACK state.EXECUTE state.IDLE 
+state.IDLE 0 0 0 
+state.EXECUTE 0 1 1 
+state.WAIT_ACK 1 0 1 
+
+State Machine - |scorefour|cpu:cp|state
+Name state.INTER state.DELAY2 state.DELAY1 state.REGWRITE state.MEMORY state.EXECUTE state.DECODE state.FETCH 
+state.FETCH 0 0 0 0 0 0 0 0 
+state.DECODE 0 0 0 0 0 0 1 1 
+state.EXECUTE 0 0 0 0 0 1 0 1 
+state.MEMORY 0 0 0 0 1 0 0 1 
+state.REGWRITE 0 0 0 1 0 0 0 1 
+state.DELAY1 0 0 1 0 0 0 0 1 
+state.DELAY2 0 1 0 0 0 0 0 1 
+state.INTER 1 0 0 0 0 0 0 1 

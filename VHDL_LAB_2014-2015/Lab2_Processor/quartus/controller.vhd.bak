@@ -1,0 +1,42 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_textio.all;
+use std.textio.all;
+
+entity controller is
+  port(
+    clk, rst: in std_logic;
+    read_address_instr: in std_logic_vector(7 downto 0);
+    dataOut : in std_logic_vector(15 downto 0);
+    dataOut_instr: in std_logic_vector(15 downto 0);
+    led_1, led_2, led_3, led_4: out std_logic
+  );
+end controller;
+
+architecture conArch of controller is
+signal tmp : std_logic_vector(15 downto 0);
+begin
+  led_1<=dataOut(0) when rst='0' else '0';
+  led_2<=dataOut(1) when rst='0' else '0';
+  led_3<=dataOut(2) when rst='0' else '0';
+  led_4<=dataOut(3) when rst='0' else '0';
+  -- process (rst)
+
+  -- begin
+  --   if rst='1' then
+  --     led_1<='0';
+  --     led_2<='0';
+  --     led_3<='0';
+  --     led_4<='0';
+  --   -- else
+  --   --   if rising_edge(clk) then
+  --   --     led_1<=dataOut(0);
+  --   --     led_2<=dataOut(1);
+  --   --     led_3<=dataOut(2);
+  --   --     led_4<=dataOut(3);
+  --   --   end if;
+  --   end if;
+  -- end process;
+end conArch;

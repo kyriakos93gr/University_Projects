@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+use std.textio.all; -- this is used only for simulatiom
+
+entity tb is
+end tb;
+
+architecture test of tb is
+
+  -- component declaration of design-under-test (dut)
+
+
+  component toplevel is
+    port(clk,rst : in std_logic;
+    hsync,vsync : out std_logic;
+    red       : out std_logic_vector(3 downto 0);
+    green     : out std_logic_vector(3 downto 0);
+    blue      : out std_logic_vector(3 downto 0));
+  end component;
+
+  -- declaration of the input and the outputs of the dut
+  signal hsync,vsync :std_logic;
+  signal red      : std_logic_vector(3 downto 0);
+  signal green    : std_logic_vector(3 downto 0);
+  signal blue     : std_logic_vector(3 downto 0);
+  signal  clk    : std_logic;
+  signal  rst    : std_logic;
+begin
+
+  -- Instantiation of dut
+  dutx: toplevel port map(clk, rst, hsync, vsync, red, green, blue);
+
+  -- Generate clock signal
+  clock: process
+  begin
+    clk <= '0';
+    wait for 2 ps;
+    clk <= '1';
+    wait for 2 ps;
+  end process;
+
+  -- Generate reset pulse to resetting dut
+  reset: process
+  begin
+    rst <= '0';
+    wait for 1 ps;
+    rst <= '1';
+    wait for 6.5 ps;
+    rst <= '0';
+    wait;
+  end process;
+
+
+
+end test;

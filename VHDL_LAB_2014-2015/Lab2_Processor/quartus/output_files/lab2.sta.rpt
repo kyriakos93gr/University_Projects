@@ -1,0 +1,1233 @@
+TimeQuest Timing Analyzer report for lab2
+Wed May  6 14:17:54 2015
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'clk'
+ 26. Fast Model Hold: 'clk'
+ 27. Fast Model Minimum Pulse Width: 'clk'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name      ; lab2                                             ;
+; Device Family      ; Cyclone II                                       ;
+; Device Name        ; EP2C20F484C7                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Combined                                         ;
+; Rise/Fall Delays   ; Unavailable                                      ;
++--------------------+--------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 125.61 MHz ; 125.61 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -6.961 ; -1387.274     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -2.064 ; -529.873              ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                                                 ;
++--------+-----------------------------------------------------------------------------------------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                       ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.961 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.925      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.881 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.845      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.801 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[5] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.765      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.732 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|regA[13]        ; clk          ; clk         ; 1.000        ; -0.080     ; 7.690      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.721 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[4] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.685      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.701 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|regA[7]         ; clk          ; clk         ; 1.000        ; -0.081     ; 7.658      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.666 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.075     ; 7.629      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.660 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|regA[1]         ; clk          ; clk         ; 1.000        ; -0.086     ; 7.612      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.641 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.605      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.561 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[2] ; clk          ; clk         ; 1.000        ; -0.074     ; 7.525      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][6]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][7]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][8]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][9]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][10]      ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
+; -6.550 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.079     ; 7.509      ;
++--------+-----------------------------------------------------------------------------------------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                                       ;
++-------+------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                    ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; cpu:cp|temp[12]              ; cpu:cp|temp[12]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; cpu:cp|we                    ; cpu:cp|we                                                                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; cpu:cp|state.MEMORY          ; cpu:cp|state.MEMORY                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.620 ; cpu:cp|state.FETCH           ; cpu:cp|state.DECODE                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.906      ;
+; 0.624 ; cpu:cp|state.REGWRITE        ; cpu:cp|state.DELAY1                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.645 ; cpu:cp|state.MEMORY          ; cpu:cp|we                                                                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.931      ;
+; 0.764 ; cpu:cp|state.DELAY1          ; cpu:cp|state.DELAY2                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.770 ; cpu:cp|state.DELAY2          ; cpu:cp|state.FETCH                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
+; 0.937 ; cpu:cp|condition[0]          ; cpu:cp|temp[6]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.006      ; 1.229      ;
+; 0.968 ; cpu:cp|state.FETCH           ; cpu:cp|we                                                                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.979 ; cpu:cp|temp[7]               ; cpu:cp|write_address[7]                                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.265      ;
+; 1.014 ; cpu:cp|regA[0]               ; cpu:cp|dataIn[0]                                                                                                ; clk          ; clk         ; 0.000        ; 0.003      ; 1.303      ;
+; 1.063 ; cpu:cp|dataIn[5]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg5          ; clk          ; clk         ; 0.000        ; 0.074      ; 1.387      ;
+; 1.068 ; cpu:cp|dataIn[0]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg0          ; clk          ; clk         ; 0.000        ; 0.075      ; 1.393      ;
+; 1.069 ; cpu:cp|dataIn[10]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg10         ; clk          ; clk         ; 0.000        ; 0.075      ; 1.394      ;
+; 1.072 ; cpu:cp|dataIn[8]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg8          ; clk          ; clk         ; 0.000        ; 0.074      ; 1.396      ;
+; 1.075 ; cpu:cp|dataIn[9]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg9          ; clk          ; clk         ; 0.000        ; 0.075      ; 1.400      ;
+; 1.077 ; cpu:cp|dataIn[15]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg15         ; clk          ; clk         ; 0.000        ; 0.075      ; 1.402      ;
+; 1.079 ; cpu:cp|state.EXECUTE         ; cpu:cp|regA[1]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.365      ;
+; 1.079 ; cpu:cp|state.EXECUTE         ; cpu:cp|regA[5]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.365      ;
+; 1.081 ; cpu:cp|dataIn[11]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg11         ; clk          ; clk         ; 0.000        ; 0.075      ; 1.406      ;
+; 1.082 ; cpu:cp|dataIn[4]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg4          ; clk          ; clk         ; 0.000        ; 0.075      ; 1.407      ;
+; 1.082 ; cpu:cp|dataIn[1]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg1          ; clk          ; clk         ; 0.000        ; 0.074      ; 1.406      ;
+; 1.083 ; cpu:cp|dataIn[14]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg14         ; clk          ; clk         ; 0.000        ; 0.075      ; 1.408      ;
+; 1.084 ; cpu:cp|dataIn[3]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg3          ; clk          ; clk         ; 0.000        ; 0.074      ; 1.408      ;
+; 1.091 ; cpu:cp|dataIn[6]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg6          ; clk          ; clk         ; 0.000        ; 0.077      ; 1.418      ;
+; 1.095 ; cpu:cp|dataIn[2]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg2          ; clk          ; clk         ; 0.000        ; 0.074      ; 1.419      ;
+; 1.097 ; cpu:cp|dataIn[7]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg7          ; clk          ; clk         ; 0.000        ; 0.075      ; 1.422      ;
+; 1.126 ; cpu:cp|state.MEMORY          ; cpu:cp|state.REGWRITE                                                                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.412      ;
+; 1.128 ; cpu:cp|write_address[4]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg4         ; clk          ; clk         ; 0.000        ; 0.078      ; 1.456      ;
+; 1.130 ; cpu:cp|dataIn[12]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg12         ; clk          ; clk         ; 0.000        ; 0.074      ; 1.454      ;
+; 1.131 ; cpu:cp|write_address[5]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg5         ; clk          ; clk         ; 0.000        ; 0.078      ; 1.459      ;
+; 1.134 ; cpu:cp|write_address[0]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg0         ; clk          ; clk         ; 0.000        ; 0.078      ; 1.462      ;
+; 1.142 ; cpu:cp|write_address[2]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg2         ; clk          ; clk         ; 0.000        ; 0.078      ; 1.470      ;
+; 1.158 ; cpu:cp|write_address[1]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg1         ; clk          ; clk         ; 0.000        ; 0.078      ; 1.486      ;
+; 1.171 ; cpu:cp|state.DECODE          ; cpu:cp|state.MEMORY                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.457      ;
+; 1.218 ; cpu:cp|regA[3]               ; cpu:cp|reg[5][3]                                                                                                ; clk          ; clk         ; 0.000        ; -0.001     ; 1.503      ;
+; 1.307 ; cpu:cp|regA[10]              ; cpu:cp|dataIn[10]                                                                                               ; clk          ; clk         ; 0.000        ; 0.002      ; 1.595      ;
+; 1.353 ; cpu:cp|dataIn[13]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg13         ; clk          ; clk         ; 0.000        ; 0.077      ; 1.680      ;
+; 1.428 ; cpu:cp|read_address[0]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg0         ; clk          ; clk         ; 0.000        ; 0.108      ; 1.786      ;
+; 1.436 ; cpu:cp|regA[12]              ; cpu:cp|dataIn[12]                                                                                               ; clk          ; clk         ; 0.000        ; 0.012      ; 1.734      ;
+; 1.440 ; cpu:cp|read_address[5]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg5         ; clk          ; clk         ; 0.000        ; 0.108      ; 1.798      ;
+; 1.442 ; cpu:cp|read_address[3]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg3         ; clk          ; clk         ; 0.000        ; 0.108      ; 1.800      ;
+; 1.446 ; cpu:cp|write_address[6]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg6         ; clk          ; clk         ; 0.000        ; 0.078      ; 1.774      ;
+; 1.452 ; cpu:cp|regA[8]               ; cpu:cp|dataIn[8]                                                                                                ; clk          ; clk         ; 0.000        ; 0.001      ; 1.739      ;
+; 1.467 ; cpu:cp|regA[2]               ; cpu:cp|dataIn[2]                                                                                                ; clk          ; clk         ; 0.000        ; 0.004      ; 1.757      ;
+; 1.475 ; cpu:cp|read_address[4]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg4         ; clk          ; clk         ; 0.000        ; 0.108      ; 1.833      ;
+; 1.478 ; cpu:cp|read_address_instr[0] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.083      ; 1.811      ;
+; 1.480 ; cpu:cp|read_address_instr[1] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.083      ; 1.813      ;
+; 1.481 ; cpu:cp|regA[3]               ; cpu:cp|dataIn[3]                                                                                                ; clk          ; clk         ; 0.000        ; 0.004      ; 1.771      ;
+; 1.483 ; cpu:cp|read_address_instr[7] ; cpu:cp|read_address_instr[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.769      ;
+; 1.494 ; cpu:cp|temp[6]               ; cpu:cp|write_address[6]                                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.780      ;
+; 1.504 ; cpu:cp|regA[5]               ; cpu:cp|dataIn[5]                                                                                                ; clk          ; clk         ; 0.000        ; 0.009      ; 1.799      ;
+; 1.505 ; cpu:cp|regA[10]              ; cpu:cp|reg[7][10]                                                                                               ; clk          ; clk         ; 0.000        ; 0.002      ; 1.793      ;
+; 1.506 ; cpu:cp|read_address_instr[4] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; clk          ; clk         ; 0.000        ; 0.083      ; 1.839      ;
+; 1.511 ; cpu:cp|read_address_instr[2] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; clk          ; clk         ; 0.000        ; 0.083      ; 1.844      ;
+; 1.512 ; cpu:cp|read_address_instr[6] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; clk          ; clk         ; 0.000        ; 0.083      ; 1.845      ;
+; 1.527 ; cpu:cp|read_address[2]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg2         ; clk          ; clk         ; 0.000        ; 0.108      ; 1.885      ;
+; 1.531 ; cpu:cp|regA[8]               ; cpu:cp|reg[4][8]                                                                                                ; clk          ; clk         ; 0.000        ; -0.001     ; 1.816      ;
+; 1.566 ; cpu:cp|condition[0]          ; cpu:cp|temp[15]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.006      ; 1.858      ;
+; 1.566 ; cpu:cp|condition[0]          ; cpu:cp|temp[7]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.006      ; 1.858      ;
+; 1.572 ; cpu:cp|temp[0]               ; cpu:cp|write_address[0]                                                                                         ; clk          ; clk         ; 0.000        ; -0.004     ; 1.854      ;
+; 1.578 ; cpu:cp|condition[0]          ; cpu:cp|temp[13]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.006      ; 1.870      ;
+; 1.579 ; cpu:cp|condition[0]          ; cpu:cp|temp[10]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.006      ; 1.871      ;
+; 1.580 ; cpu:cp|regA[6]               ; cpu:cp|reg[2][6]                                                                                                ; clk          ; clk         ; 0.000        ; -0.004     ; 1.862      ;
+; 1.582 ; cpu:cp|condition[0]          ; cpu:cp|temp[9]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.006      ; 1.874      ;
+; 1.585 ; cpu:cp|condition[2]          ; cpu:cp|state.EXECUTE                                                                                            ; clk          ; clk         ; 0.000        ; -0.011     ; 1.860      ;
+; 1.585 ; cpu:cp|condition[0]          ; cpu:cp|temp[8]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.006      ; 1.877      ;
+; 1.585 ; cpu:cp|condition[0]          ; cpu:cp|temp[11]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.006      ; 1.877      ;
+; 1.587 ; cpu:cp|read_address_instr[7] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; clk          ; clk         ; 0.000        ; 0.083      ; 1.920      ;
+; 1.595 ; cpu:cp|read_address_instr[0] ; cpu:cp|read_address_instr[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.881      ;
+; 1.597 ; cpu:cp|reg[7][6]             ; cpu:cp|regA[6]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.605 ; cpu:cp|read_address_instr[3] ; cpu:cp|read_address_instr[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.891      ;
+; 1.628 ; cpu:cp|reg[4][13]            ; cpu:cp|regC[13]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.912      ;
+; 1.630 ; cpu:cp|regB[4]               ; cpu:cp|read_address_instr[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.010      ; 1.926      ;
+; 1.634 ; cpu:cp|we                    ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_we_reg               ; clk          ; clk         ; 0.000        ; 0.079      ; 1.963      ;
+; 1.635 ; cpu:cp|reg[2][12]            ; cpu:cp|regC[12]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.001     ; 1.920      ;
+; 1.640 ; cpu:cp|read_address_instr[4] ; cpu:cp|read_address_instr[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.926      ;
+; 1.642 ; cpu:cp|read_address_instr[6] ; cpu:cp|read_address_instr[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.928      ;
+; 1.645 ; cpu:cp|regA[6]               ; cpu:cp|dataIn[6]                                                                                                ; clk          ; clk         ; 0.000        ; 0.001      ; 1.932      ;
+; 1.654 ; cpu:cp|regA[4]               ; cpu:cp|dataIn[4]                                                                                                ; clk          ; clk         ; 0.000        ; 0.003      ; 1.943      ;
+; 1.658 ; cpu:cp|state.DECODE          ; cpu:cp|state.EXECUTE                                                                                            ; clk          ; clk         ; 0.000        ; -0.005     ; 1.939      ;
+; 1.681 ; cpu:cp|regA[5]               ; cpu:cp|reg[1][5]                                                                                                ; clk          ; clk         ; 0.000        ; 0.001      ; 1.968      ;
+; 1.682 ; cpu:cp|condition[1]          ; cpu:cp|state.EXECUTE                                                                                            ; clk          ; clk         ; 0.000        ; -0.011     ; 1.957      ;
+; 1.690 ; cpu:cp|regB[2]               ; cpu:cp|read_address_instr[2]                                                                                    ; clk          ; clk         ; 0.000        ; 0.010      ; 1.986      ;
+; 1.700 ; cpu:cp|reg[3][5]             ; cpu:cp|regB[5]                                                                                                  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.985      ;
+; 1.713 ; cpu:cp|regA[7]               ; cpu:cp|dataIn[7]                                                                                                ; clk          ; clk         ; 0.000        ; 0.003      ; 2.002      ;
+; 1.724 ; cpu:cp|reg[2][2]             ; cpu:cp|regC[2]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.010      ;
+; 1.741 ; cpu:cp|read_address[1]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg1         ; clk          ; clk         ; 0.000        ; 0.108      ; 2.099      ;
+; 1.760 ; cpu:cp|regA[1]               ; cpu:cp|dataIn[1]                                                                                                ; clk          ; clk         ; 0.000        ; 0.009      ; 2.055      ;
+; 1.767 ; cpu:cp|reg[2][14]            ; cpu:cp|regC[14]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.001     ; 2.052      ;
+; 1.777 ; cpu:cp|reg[1][15]            ; cpu:cp|regC[15]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.001     ; 2.062      ;
+; 1.785 ; cpu:cp|reg[7][0]             ; cpu:cp|regA[0]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.071      ;
+; 1.791 ; cpu:cp|reg[3][5]             ; cpu:cp|read_address[5]                                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.077      ;
+; 1.803 ; cpu:cp|temp[1]               ; cpu:cp|read_address[1]                                                                                          ; clk          ; clk         ; 0.000        ; 0.002      ; 2.091      ;
+; 1.804 ; cpu:cp|regA[14]              ; cpu:cp|dataIn[14]                                                                                               ; clk          ; clk         ; 0.000        ; 0.004      ; 2.094      ;
+; 1.806 ; cpu:cp|read_address_instr[5] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; clk          ; clk         ; 0.000        ; 0.083      ; 2.139      ;
+; 1.806 ; cpu:cp|read_address[7]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg7         ; clk          ; clk         ; 0.000        ; 0.108      ; 2.164      ;
+; 1.815 ; cpu:cp|reg[5][8]             ; cpu:cp|regB[8]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.001      ; 2.102      ;
+; 1.818 ; cpu:cp|read_address[6]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg6         ; clk          ; clk         ; 0.000        ; 0.108      ; 2.176      ;
++-------+------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg1         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg1         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg2         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg2         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg3         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg3         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg4         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg4         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg5         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg5         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg6         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg6         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg7         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg7         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg1          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg1          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg10         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg10         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg11         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg11         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg12         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg12         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg13         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg13         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg14         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg14         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg15         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg15         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg2          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg2          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg3          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg3          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg4          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg4          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg5          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg5          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg6          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg6          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg7          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg7          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg8          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg8          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg9          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg9          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_we_reg               ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_we_reg               ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg1         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg1         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg2         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg2         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg3         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg3         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg4         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg4         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg5         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg5         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg6         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg6         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg7         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg7         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a10~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a10~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a11~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a11~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a12~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a12~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a13~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a13~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a14~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a14~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a15~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a15~porta_memory_reg0         ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a1~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a1~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a2~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a2~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a3~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a3~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a4~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a4~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a5~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a5~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a6~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a6~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a7~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a7~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a8~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a8~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a9~porta_memory_reg0          ;
+; -2.064 ; 0.500        ; 2.564          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a9~porta_memory_reg0          ;
+; -1.814 ; 0.500        ; 2.314          ; High Pulse Width ; clk   ; Rise       ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.814 ; 0.500        ; 2.314          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk        ; 4.302 ; 4.302 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk        ; 0.410 ; 0.410 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; led_0     ; clk        ; 12.351 ; 12.351 ; Rise       ; clk             ;
+; led_1     ; clk        ; 12.473 ; 12.473 ; Rise       ; clk             ;
+; led_2     ; clk        ; 13.323 ; 13.323 ; Rise       ; clk             ;
+; led_3     ; clk        ; 12.387 ; 12.387 ; Rise       ; clk             ;
+; led_4     ; clk        ; 13.049 ; 13.049 ; Rise       ; clk             ;
+; led_5     ; clk        ; 13.269 ; 13.269 ; Rise       ; clk             ;
+; led_6     ; clk        ; 13.025 ; 13.025 ; Rise       ; clk             ;
+; led_7     ; clk        ; 13.630 ; 13.630 ; Rise       ; clk             ;
+; led_8     ; clk        ; 12.152 ; 12.152 ; Rise       ; clk             ;
+; led_9     ; clk        ; 12.587 ; 12.587 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; led_0     ; clk        ; 12.351 ; 12.351 ; Rise       ; clk             ;
+; led_1     ; clk        ; 12.473 ; 12.473 ; Rise       ; clk             ;
+; led_2     ; clk        ; 13.323 ; 13.323 ; Rise       ; clk             ;
+; led_3     ; clk        ; 12.387 ; 12.387 ; Rise       ; clk             ;
+; led_4     ; clk        ; 13.049 ; 13.049 ; Rise       ; clk             ;
+; led_5     ; clk        ; 13.269 ; 13.269 ; Rise       ; clk             ;
+; led_6     ; clk        ; 13.025 ; 13.025 ; Rise       ; clk             ;
+; led_7     ; clk        ; 13.630 ; 13.630 ; Rise       ; clk             ;
+; led_8     ; clk        ; 12.152 ; 12.152 ; Rise       ; clk             ;
+; led_9     ; clk        ; 12.587 ; 12.587 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; led_0       ;    ; 6.644 ; 6.644 ;    ;
+; rst        ; led_1       ;    ; 7.108 ; 7.108 ;    ;
+; rst        ; led_2       ;    ; 6.984 ; 6.984 ;    ;
+; rst        ; led_3       ;    ; 6.749 ; 6.749 ;    ;
+; rst        ; led_4       ;    ; 8.341 ; 8.341 ;    ;
+; rst        ; led_5       ;    ; 8.023 ; 8.023 ;    ;
+; rst        ; led_6       ;    ; 7.346 ; 7.346 ;    ;
+; rst        ; led_7       ;    ; 7.091 ; 7.091 ;    ;
+; rst        ; led_8       ;    ; 7.439 ; 7.439 ;    ;
+; rst        ; led_9       ;    ; 6.941 ; 6.941 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; led_0       ;    ; 6.644 ; 6.644 ;    ;
+; rst        ; led_1       ;    ; 7.108 ; 7.108 ;    ;
+; rst        ; led_2       ;    ; 6.984 ; 6.984 ;    ;
+; rst        ; led_3       ;    ; 6.749 ; 6.749 ;    ;
+; rst        ; led_4       ;    ; 8.341 ; 8.341 ;    ;
+; rst        ; led_5       ;    ; 8.023 ; 8.023 ;    ;
+; rst        ; led_6       ;    ; 7.346 ; 7.346 ;    ;
+; rst        ; led_7       ;    ; 7.091 ; 7.091 ;    ;
+; rst        ; led_8       ;    ; 7.439 ; 7.439 ;    ;
+; rst        ; led_9       ;    ; 6.941 ; 6.941 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.693 ; -535.335      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.627 ; -426.594              ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                                                 ;
++--------+-----------------------------------------------------------------------------------------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                       ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[2][10]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.693 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[2][11]      ; clk          ; clk         ; 1.000        ; -0.064     ; 3.661      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.682 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[7] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.651      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[5][12]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.658 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[5][13]      ; clk          ; clk         ; 1.000        ; -0.072     ; 3.618      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[7][6]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.648 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[7][7]       ; clk          ; clk         ; 1.000        ; -0.070     ; 3.610      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.647 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|read_address[6] ; clk          ; clk         ; 1.000        ; -0.063     ; 3.616      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[7][4]       ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[7][12]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.632 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; cpu:cp|reg[7][13]      ; clk          ; clk         ; 1.000        ; -0.071     ; 3.593      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][6]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][7]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][8]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][9]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; cpu:cp|reg[6][10]      ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg3 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
+; -2.627 ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; cpu:cp|reg[6][5]       ; clk          ; clk         ; 1.000        ; -0.067     ; 3.592      ;
++--------+-----------------------------------------------------------------------------------------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                                       ;
++-------+------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                    ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; cpu:cp|temp[12]              ; cpu:cp|temp[12]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cpu:cp|we                    ; cpu:cp|we                                                                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cpu:cp|state.MEMORY          ; cpu:cp|state.MEMORY                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240 ; cpu:cp|state.REGWRITE        ; cpu:cp|state.DELAY1                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.252 ; cpu:cp|state.MEMORY          ; cpu:cp|we                                                                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.261 ; cpu:cp|state.FETCH           ; cpu:cp|state.DECODE                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.413      ;
+; 0.290 ; cpu:cp|state.DELAY2          ; cpu:cp|state.FETCH                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.442      ;
+; 0.325 ; cpu:cp|state.DELAY1          ; cpu:cp|state.DELAY2                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.359 ; cpu:cp|state.FETCH           ; cpu:cp|we                                                                                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; cpu:cp|temp[7]               ; cpu:cp|write_address[7]                                                                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; cpu:cp|condition[0]          ; cpu:cp|temp[6]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.007      ; 0.520      ;
+; 0.373 ; cpu:cp|dataIn[0]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg0          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.575      ;
+; 0.374 ; cpu:cp|dataIn[5]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg5          ; clk          ; clk         ; 0.000        ; 0.062      ; 0.574      ;
+; 0.376 ; cpu:cp|dataIn[10]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg10         ; clk          ; clk         ; 0.000        ; 0.064      ; 0.578      ;
+; 0.378 ; cpu:cp|dataIn[9]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg9          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.580      ;
+; 0.379 ; cpu:cp|dataIn[15]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg15         ; clk          ; clk         ; 0.000        ; 0.064      ; 0.581      ;
+; 0.379 ; cpu:cp|dataIn[8]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg8          ; clk          ; clk         ; 0.000        ; 0.062      ; 0.579      ;
+; 0.381 ; cpu:cp|dataIn[14]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg14         ; clk          ; clk         ; 0.000        ; 0.064      ; 0.583      ;
+; 0.381 ; cpu:cp|dataIn[11]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg11         ; clk          ; clk         ; 0.000        ; 0.064      ; 0.583      ;
+; 0.381 ; cpu:cp|dataIn[4]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg4          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.583      ;
+; 0.383 ; cpu:cp|dataIn[1]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg1          ; clk          ; clk         ; 0.000        ; 0.062      ; 0.583      ;
+; 0.385 ; cpu:cp|dataIn[3]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg3          ; clk          ; clk         ; 0.000        ; 0.062      ; 0.585      ;
+; 0.388 ; cpu:cp|dataIn[7]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg7          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.590      ;
+; 0.388 ; cpu:cp|dataIn[6]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg6          ; clk          ; clk         ; 0.000        ; 0.065      ; 0.591      ;
+; 0.390 ; cpu:cp|dataIn[2]             ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg2          ; clk          ; clk         ; 0.000        ; 0.062      ; 0.590      ;
+; 0.412 ; cpu:cp|write_address[4]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg4         ; clk          ; clk         ; 0.000        ; 0.066      ; 0.616      ;
+; 0.414 ; cpu:cp|dataIn[12]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg12         ; clk          ; clk         ; 0.000        ; 0.062      ; 0.614      ;
+; 0.414 ; cpu:cp|write_address[5]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg5         ; clk          ; clk         ; 0.000        ; 0.066      ; 0.618      ;
+; 0.415 ; cpu:cp|write_address[0]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg0         ; clk          ; clk         ; 0.000        ; 0.066      ; 0.619      ;
+; 0.420 ; cpu:cp|write_address[2]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg2         ; clk          ; clk         ; 0.000        ; 0.066      ; 0.624      ;
+; 0.420 ; cpu:cp|regA[0]               ; cpu:cp|dataIn[0]                                                                                                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.574      ;
+; 0.423 ; cpu:cp|state.MEMORY          ; cpu:cp|state.REGWRITE                                                                                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.575      ;
+; 0.428 ; cpu:cp|write_address[1]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg1         ; clk          ; clk         ; 0.000        ; 0.066      ; 0.632      ;
+; 0.444 ; cpu:cp|state.DECODE          ; cpu:cp|state.MEMORY                                                                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.596      ;
+; 0.448 ; cpu:cp|regA[3]               ; cpu:cp|reg[5][3]                                                                                                ; clk          ; clk         ; 0.000        ; -0.001     ; 0.599      ;
+; 0.482 ; cpu:cp|dataIn[13]            ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg13         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.685      ;
+; 0.486 ; cpu:cp|state.EXECUTE         ; cpu:cp|regA[1]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.638      ;
+; 0.486 ; cpu:cp|state.EXECUTE         ; cpu:cp|regA[5]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.638      ;
+; 0.527 ; cpu:cp|regA[10]              ; cpu:cp|dataIn[10]                                                                                               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.680      ;
+; 0.536 ; cpu:cp|write_address[6]      ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg6         ; clk          ; clk         ; 0.000        ; 0.066      ; 0.740      ;
+; 0.539 ; cpu:cp|regA[12]              ; cpu:cp|dataIn[12]                                                                                               ; clk          ; clk         ; 0.000        ; 0.012      ; 0.703      ;
+; 0.540 ; cpu:cp|read_address[0]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg0         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.743      ;
+; 0.546 ; cpu:cp|read_address_instr[0] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.070      ; 0.754      ;
+; 0.546 ; cpu:cp|read_address[5]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg5         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.749      ;
+; 0.546 ; cpu:cp|read_address[3]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg3         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.749      ;
+; 0.547 ; cpu:cp|regA[2]               ; cpu:cp|dataIn[2]                                                                                                ; clk          ; clk         ; 0.000        ; 0.004      ; 0.703      ;
+; 0.549 ; cpu:cp|read_address_instr[1] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.070      ; 0.757      ;
+; 0.549 ; cpu:cp|temp[6]               ; cpu:cp|write_address[6]                                                                                         ; clk          ; clk         ; 0.000        ; -0.001     ; 0.700      ;
+; 0.554 ; cpu:cp|regA[3]               ; cpu:cp|dataIn[3]                                                                                                ; clk          ; clk         ; 0.000        ; 0.004      ; 0.710      ;
+; 0.559 ; cpu:cp|regA[8]               ; cpu:cp|dataIn[8]                                                                                                ; clk          ; clk         ; 0.000        ; 0.001      ; 0.712      ;
+; 0.561 ; cpu:cp|regA[10]              ; cpu:cp|reg[7][10]                                                                                               ; clk          ; clk         ; 0.000        ; 0.001      ; 0.714      ;
+; 0.563 ; cpu:cp|read_address_instr[4] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg4 ; clk          ; clk         ; 0.000        ; 0.070      ; 0.771      ;
+; 0.564 ; cpu:cp|read_address[4]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg4         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.767      ;
+; 0.565 ; cpu:cp|read_address_instr[2] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg2 ; clk          ; clk         ; 0.000        ; 0.070      ; 0.773      ;
+; 0.567 ; cpu:cp|read_address_instr[6] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg6 ; clk          ; clk         ; 0.000        ; 0.070      ; 0.775      ;
+; 0.574 ; cpu:cp|condition[0]          ; cpu:cp|temp[15]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.006      ; 0.732      ;
+; 0.575 ; cpu:cp|condition[0]          ; cpu:cp|temp[7]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.006      ; 0.733      ;
+; 0.577 ; cpu:cp|reg[7][6]             ; cpu:cp|regA[6]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.729      ;
+; 0.578 ; cpu:cp|regA[5]               ; cpu:cp|dataIn[5]                                                                                                ; clk          ; clk         ; 0.000        ; 0.008      ; 0.738      ;
+; 0.579 ; cpu:cp|condition[0]          ; cpu:cp|temp[13]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.007      ; 0.738      ;
+; 0.580 ; cpu:cp|regA[8]               ; cpu:cp|reg[4][8]                                                                                                ; clk          ; clk         ; 0.000        ; -0.001     ; 0.731      ;
+; 0.580 ; cpu:cp|condition[0]          ; cpu:cp|temp[10]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.007      ; 0.739      ;
+; 0.582 ; cpu:cp|read_address_instr[7] ; cpu:cp|read_address_instr[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.583 ; cpu:cp|condition[0]          ; cpu:cp|temp[9]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.007      ; 0.742      ;
+; 0.586 ; cpu:cp|condition[0]          ; cpu:cp|temp[11]                                                                                                 ; clk          ; clk         ; 0.000        ; 0.007      ; 0.745      ;
+; 0.587 ; cpu:cp|condition[0]          ; cpu:cp|temp[8]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.007      ; 0.746      ;
+; 0.595 ; cpu:cp|temp[0]               ; cpu:cp|write_address[0]                                                                                         ; clk          ; clk         ; 0.000        ; -0.004     ; 0.743      ;
+; 0.600 ; cpu:cp|read_address[2]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg2         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.803      ;
+; 0.604 ; cpu:cp|we                    ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_we_reg               ; clk          ; clk         ; 0.000        ; 0.067      ; 0.809      ;
+; 0.609 ; cpu:cp|regA[6]               ; cpu:cp|reg[2][6]                                                                                                ; clk          ; clk         ; 0.000        ; -0.003     ; 0.758      ;
+; 0.610 ; cpu:cp|read_address_instr[0] ; cpu:cp|read_address_instr[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.762      ;
+; 0.616 ; cpu:cp|read_address_instr[3] ; cpu:cp|read_address_instr[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.768      ;
+; 0.617 ; cpu:cp|reg[3][5]             ; cpu:cp|regB[5]                                                                                                  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.768      ;
+; 0.618 ; cpu:cp|read_address_instr[7] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg7 ; clk          ; clk         ; 0.000        ; 0.070      ; 0.826      ;
+; 0.618 ; cpu:cp|regB[4]               ; cpu:cp|read_address_instr[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.011      ; 0.781      ;
+; 0.624 ; cpu:cp|reg[2][2]             ; cpu:cp|regC[2]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.776      ;
+; 0.625 ; cpu:cp|condition[2]          ; cpu:cp|state.EXECUTE                                                                                            ; clk          ; clk         ; 0.000        ; -0.009     ; 0.768      ;
+; 0.625 ; cpu:cp|read_address_instr[6] ; cpu:cp|read_address_instr[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.777      ;
+; 0.628 ; cpu:cp|read_address_instr[4] ; cpu:cp|read_address_instr[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.780      ;
+; 0.634 ; cpu:cp|reg[4][13]            ; cpu:cp|regC[13]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.784      ;
+; 0.635 ; cpu:cp|reg[2][12]            ; cpu:cp|regC[12]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.001     ; 0.786      ;
+; 0.636 ; cpu:cp|regB[2]               ; cpu:cp|read_address_instr[2]                                                                                    ; clk          ; clk         ; 0.000        ; 0.011      ; 0.799      ;
+; 0.638 ; cpu:cp|reg[7][0]             ; cpu:cp|regA[0]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.642 ; cpu:cp|reg[3][5]             ; cpu:cp|read_address[5]                                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.649 ; cpu:cp|state.DECODE          ; cpu:cp|state.EXECUTE                                                                                            ; clk          ; clk         ; 0.000        ; -0.004     ; 0.797      ;
+; 0.652 ; cpu:cp|reg[7][7]             ; cpu:cp|regA[7]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.804      ;
+; 0.653 ; cpu:cp|condition[1]          ; cpu:cp|state.EXECUTE                                                                                            ; clk          ; clk         ; 0.000        ; -0.009     ; 0.796      ;
+; 0.654 ; cpu:cp|reg[1][15]            ; cpu:cp|regC[15]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.001     ; 0.805      ;
+; 0.655 ; cpu:cp|regA[5]               ; cpu:cp|reg[1][5]                                                                                                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.807      ;
+; 0.655 ; cpu:cp|reg[3][4]             ; cpu:cp|read_address[4]                                                                                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.807      ;
+; 0.658 ; cpu:cp|regA[4]               ; cpu:cp|dataIn[4]                                                                                                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.812      ;
+; 0.659 ; cpu:cp|read_address[1]       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg1         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.862      ;
+; 0.664 ; cpu:cp|regA[6]               ; cpu:cp|dataIn[6]                                                                                                ; clk          ; clk         ; 0.000        ; 0.002      ; 0.818      ;
+; 0.664 ; cpu:cp|regA[1]               ; cpu:cp|dataIn[1]                                                                                                ; clk          ; clk         ; 0.000        ; 0.008      ; 0.824      ;
+; 0.672 ; cpu:cp|reg[5][8]             ; cpu:cp|regB[8]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.825      ;
+; 0.675 ; cpu:cp|reg[2][14]            ; cpu:cp|regC[14]                                                                                                 ; clk          ; clk         ; 0.000        ; -0.001     ; 0.826      ;
+; 0.679 ; cpu:cp|read_address_instr[5] ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg5 ; clk          ; clk         ; 0.000        ; 0.070      ; 0.887      ;
+; 0.679 ; cpu:cp|temp[1]               ; cpu:cp|read_address[1]                                                                                          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.832      ;
+; 0.681 ; cpu:cp|regB[2]               ; cpu:cp|write_address[2]                                                                                         ; clk          ; clk         ; 0.000        ; 0.013      ; 0.846      ;
+; 0.681 ; cpu:cp|reg[1][2]             ; cpu:cp|regC[2]                                                                                                  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.834      ;
++-------+------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg1         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg1         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg2         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg2         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg3         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg3         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg4         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg4         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg5         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg5         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg6         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg6         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg7         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_address_reg7         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg1          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg1          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg10         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg10         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg11         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg11         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg12         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg12         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg13         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg13         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg14         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg14         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg15         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg15         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg2          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg2          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg3          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg3          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg4          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg4          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg5          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg5          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg6          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg6          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg7          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg7          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg8          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg8          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg9          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_datain_reg9          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_we_reg               ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~porta_we_reg               ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg1         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg1         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg2         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg2         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg3         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg3         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg4         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg4         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg5         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg5         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg6         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg6         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg7         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a0~portb_address_reg7         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a10~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a10~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a11~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a11~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a12~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a12~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a13~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a13~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a14~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a14~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a15~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a15~porta_memory_reg0         ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a1~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a1~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a2~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a2~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a3~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a3~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a4~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a4~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a5~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a5~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a6~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a6~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a7~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a7~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a8~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a8~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a9~porta_memory_reg0          ;
+; -1.627 ; 0.500        ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer:ram|altsyncram:ram_block_rtl_0|altsyncram_mrg1:auto_generated|ram_block1a9~porta_memory_reg0          ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; ram_infer_instr:instr|altsyncram:ram_block_rtl_0|altsyncram_u441:auto_generated|ram_block1a0~porta_address_reg0 ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk        ; 1.173 ; 1.173 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk        ; 0.658 ; 0.658 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led_0     ; clk        ; 6.472 ; 6.472 ; Rise       ; clk             ;
+; led_1     ; clk        ; 6.477 ; 6.477 ; Rise       ; clk             ;
+; led_2     ; clk        ; 6.851 ; 6.851 ; Rise       ; clk             ;
+; led_3     ; clk        ; 6.511 ; 6.511 ; Rise       ; clk             ;
+; led_4     ; clk        ; 6.788 ; 6.788 ; Rise       ; clk             ;
+; led_5     ; clk        ; 6.813 ; 6.813 ; Rise       ; clk             ;
+; led_6     ; clk        ; 6.748 ; 6.748 ; Rise       ; clk             ;
+; led_7     ; clk        ; 7.059 ; 7.059 ; Rise       ; clk             ;
+; led_8     ; clk        ; 6.362 ; 6.362 ; Rise       ; clk             ;
+; led_9     ; clk        ; 6.540 ; 6.540 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led_0     ; clk        ; 6.472 ; 6.472 ; Rise       ; clk             ;
+; led_1     ; clk        ; 6.477 ; 6.477 ; Rise       ; clk             ;
+; led_2     ; clk        ; 6.851 ; 6.851 ; Rise       ; clk             ;
+; led_3     ; clk        ; 6.511 ; 6.511 ; Rise       ; clk             ;
+; led_4     ; clk        ; 6.788 ; 6.788 ; Rise       ; clk             ;
+; led_5     ; clk        ; 6.813 ; 6.813 ; Rise       ; clk             ;
+; led_6     ; clk        ; 6.748 ; 6.748 ; Rise       ; clk             ;
+; led_7     ; clk        ; 7.059 ; 7.059 ; Rise       ; clk             ;
+; led_8     ; clk        ; 6.362 ; 6.362 ; Rise       ; clk             ;
+; led_9     ; clk        ; 6.540 ; 6.540 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; led_0       ;    ; 3.048 ; 3.048 ;    ;
+; rst        ; led_1       ;    ; 3.205 ; 3.205 ;    ;
+; rst        ; led_2       ;    ; 3.193 ; 3.193 ;    ;
+; rst        ; led_3       ;    ; 3.128 ; 3.128 ;    ;
+; rst        ; led_4       ;    ; 3.796 ; 3.796 ;    ;
+; rst        ; led_5       ;    ; 3.581 ; 3.581 ;    ;
+; rst        ; led_6       ;    ; 3.341 ; 3.341 ;    ;
+; rst        ; led_7       ;    ; 3.272 ; 3.272 ;    ;
+; rst        ; led_8       ;    ; 3.366 ; 3.366 ;    ;
+; rst        ; led_9       ;    ; 3.153 ; 3.153 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; led_0       ;    ; 3.048 ; 3.048 ;    ;
+; rst        ; led_1       ;    ; 3.205 ; 3.205 ;    ;
+; rst        ; led_2       ;    ; 3.193 ; 3.193 ;    ;
+; rst        ; led_3       ;    ; 3.128 ; 3.128 ;    ;
+; rst        ; led_4       ;    ; 3.796 ; 3.796 ;    ;
+; rst        ; led_5       ;    ; 3.581 ; 3.581 ;    ;
+; rst        ; led_6       ;    ; 3.341 ; 3.341 ;    ;
+; rst        ; led_7       ;    ; 3.272 ; 3.272 ;    ;
+; rst        ; led_8       ;    ; 3.366 ; 3.366 ;    ;
+; rst        ; led_9       ;    ; 3.153 ; 3.153 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -6.961    ; 0.215 ; N/A      ; N/A     ; -2.064              ;
+;  clk             ; -6.961    ; 0.215 ; N/A      ; N/A     ; -2.064              ;
+; Design-wide TNS  ; -1387.274 ; 0.0   ; 0.0      ; 0.0     ; -529.873            ;
+;  clk             ; -1387.274 ; 0.000 ; N/A      ; N/A     ; -529.873            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk        ; 4.302 ; 4.302 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk        ; 0.658 ; 0.658 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; led_0     ; clk        ; 12.351 ; 12.351 ; Rise       ; clk             ;
+; led_1     ; clk        ; 12.473 ; 12.473 ; Rise       ; clk             ;
+; led_2     ; clk        ; 13.323 ; 13.323 ; Rise       ; clk             ;
+; led_3     ; clk        ; 12.387 ; 12.387 ; Rise       ; clk             ;
+; led_4     ; clk        ; 13.049 ; 13.049 ; Rise       ; clk             ;
+; led_5     ; clk        ; 13.269 ; 13.269 ; Rise       ; clk             ;
+; led_6     ; clk        ; 13.025 ; 13.025 ; Rise       ; clk             ;
+; led_7     ; clk        ; 13.630 ; 13.630 ; Rise       ; clk             ;
+; led_8     ; clk        ; 12.152 ; 12.152 ; Rise       ; clk             ;
+; led_9     ; clk        ; 12.587 ; 12.587 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led_0     ; clk        ; 6.472 ; 6.472 ; Rise       ; clk             ;
+; led_1     ; clk        ; 6.477 ; 6.477 ; Rise       ; clk             ;
+; led_2     ; clk        ; 6.851 ; 6.851 ; Rise       ; clk             ;
+; led_3     ; clk        ; 6.511 ; 6.511 ; Rise       ; clk             ;
+; led_4     ; clk        ; 6.788 ; 6.788 ; Rise       ; clk             ;
+; led_5     ; clk        ; 6.813 ; 6.813 ; Rise       ; clk             ;
+; led_6     ; clk        ; 6.748 ; 6.748 ; Rise       ; clk             ;
+; led_7     ; clk        ; 7.059 ; 7.059 ; Rise       ; clk             ;
+; led_8     ; clk        ; 6.362 ; 6.362 ; Rise       ; clk             ;
+; led_9     ; clk        ; 6.540 ; 6.540 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; led_0       ;    ; 6.644 ; 6.644 ;    ;
+; rst        ; led_1       ;    ; 7.108 ; 7.108 ;    ;
+; rst        ; led_2       ;    ; 6.984 ; 6.984 ;    ;
+; rst        ; led_3       ;    ; 6.749 ; 6.749 ;    ;
+; rst        ; led_4       ;    ; 8.341 ; 8.341 ;    ;
+; rst        ; led_5       ;    ; 8.023 ; 8.023 ;    ;
+; rst        ; led_6       ;    ; 7.346 ; 7.346 ;    ;
+; rst        ; led_7       ;    ; 7.091 ; 7.091 ;    ;
+; rst        ; led_8       ;    ; 7.439 ; 7.439 ;    ;
+; rst        ; led_9       ;    ; 6.941 ; 6.941 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; led_0       ;    ; 3.048 ; 3.048 ;    ;
+; rst        ; led_1       ;    ; 3.205 ; 3.205 ;    ;
+; rst        ; led_2       ;    ; 3.193 ; 3.193 ;    ;
+; rst        ; led_3       ;    ; 3.128 ; 3.128 ;    ;
+; rst        ; led_4       ;    ; 3.796 ; 3.796 ;    ;
+; rst        ; led_5       ;    ; 3.581 ; 3.581 ;    ;
+; rst        ; led_6       ;    ; 3.341 ; 3.341 ;    ;
+; rst        ; led_7       ;    ; 3.272 ; 3.272 ;    ;
+; rst        ; led_8       ;    ; 3.366 ; 3.366 ;    ;
+; rst        ; led_9       ;    ; 3.153 ; 3.153 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 11245    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 11245    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 253   ; 253  ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 90    ; 90   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Wed May  6 14:17:52 2015
+Info: Command: quartus_sta lab2 -c lab2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.961
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.961     -1387.274 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.064
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.064      -529.873 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.693
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.693      -535.335 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.627
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.627      -426.594 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 287 megabytes
+    Info: Processing ended: Wed May  6 14:17:54 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

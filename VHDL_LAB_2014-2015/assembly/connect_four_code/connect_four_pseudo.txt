@@ -1,0 +1,138 @@
+board_rows=6;
+board_columns=7;
+
+player1=01;
+player2=11;
+
+horizontal_sum=0;
+vertical_sum=0;
+diagonal_sum=0;
+
+player1_sum=0;
+player2_sum=0;
+
+
+//board init
+
+//our board is gonna be 6x16bit word
+//each "stone" is gonna be represented
+//by 2 digits
+//00:none
+//01:player1
+//11:player2
+//so, from 16 bits, pairs will represent
+//a "stone" so 2 bits will remain at the end
+//(16-2x7=2)
+
+
+
+//check for win
+//mem_line is our 16 bit word
+//for the vertical part we are gonna use counters
+//2 bit for each column
+
+//horizontal
+for (i = 0; i < board_rows; i ++){
+  if mem_line[i]=player1 then {
+    player2_sum=0;
+    player1_sum++;
+    if player1_sum=4 then player1_win();
+
+
+    //vertical check for player1
+    //we store player1 in reg5 and player2 in reg6
+    //each two bit represent the sum/in-line stones"
+
+    if i=1 reg5=reg5+"0100000000000000"
+      reg4=reg5 nand "1100000000000000"
+      reg6=reg6 nand "0011111111111111"    //sets the column of other player sum to zero
+      reg6=reg6 nand "1111111111111111"
+      if reg4="0011111111111111" then player1_win();
+    if i=2 reg5=reg5+"0001000000000000"
+      reg4=reg5 nand "0011000000000000"
+      reg6=reg6 nand "1100111111111111"
+      reg6=reg6 nand "1111111111111111"
+      if reg4="1100111111111111" then player1_win();
+    if i=3 reg5=reg5+"0000010000000000"
+      reg4=reg5 nand "0000110000000000"
+      reg6=reg6 nand "1111001111111111"
+      reg6=reg6 nand "1111111111111111"
+      if reg4="1111001111111111" then player1_win();
+    if i=4 reg5=reg5+"0000000100000000"
+      reg4=reg5 nand "0000001100000000"
+      reg6=reg6 nand "1111110011111111"
+      reg6=reg6 nand "1111111111111111"
+      if reg4="1111110011111111" then player1_win();
+    if i=5 reg5=reg5+"0000000001000000"
+      reg4=reg5 nand "0000000011000000"
+      reg6=reg6 nand "1111111100111111"
+      reg6=reg6 nand "1111111111111111"
+      if reg4="1111111100111111" then player1_win();
+    if i=6 reg5=reg5+"0000000000010000"
+      reg4=reg5 nand "0000000000110000"
+      reg6=reg6 nand "1111111111001111"
+      reg6=reg6 nand "1111111111111111"
+      if reg4="1111111111001111" then player1_win();
+    if i=7 reg5=reg5+"0000000000000100"
+      reg4=reg5 nand "0000000000000011"
+      reg6=reg6 nand "1111111111110011"
+      reg6=reg6 nand "1111111111111111"
+      if reg4="1111111111110011" then player1_win();
+
+  }
+  if mem_line[i]=player2 then {
+    player1_sum=0;
+    player2_sum++;
+    if player2_sum=4 then player2_win();
+
+    //vertical check for player2
+    if i=1 reg6=reg6+"0100000000000000"
+      reg4=reg6 nand "1100000000000000"
+      reg5=reg5 nand "0011111111111111"
+      reg5=reg5 nand "1111111111111111"
+      if reg4="0011111111111111" then player1_win();
+    if i=2 reg6=reg6+"0001000000000000"
+      reg4=reg6 nand "0011000000000000"
+      reg5=reg5 nand "1100111111111111"
+      reg5=reg5 nand "1111111111111111"
+      if reg4="1100111111111111" then player1_win();
+    if i=3 reg6=reg6+"0000010000000000"
+      reg4=reg6 nand "0000110000000000"
+      reg5=reg5 nand "1111001111111111"
+      reg5=reg5 nand "1111111111111111"
+      if reg4="1111001111111111" then player1_win();
+    if i=4 reg6=reg6+"0000000100000000"
+      reg4=reg6 nand "0000001100000000"
+      reg5=reg5 nand "1111110011111111"
+      reg5=reg5 nand "1111111111111111"
+      if reg4="1111110011111111" then player1_win();
+    if i=5 reg6=reg6+"0000000001000000"
+      reg4=reg6 nand "0000000011000000"
+      reg5=reg5 nand "1111111100111111"
+      reg5=reg5 nand "1111111111111111"
+      if reg4="1111111100111111" then player1_win();
+    if i=6 reg6=reg6+"0000000000010000"
+      reg4=reg6 nand "0000000000110000"
+      reg5=reg5 nand "1111111111001111"
+      reg5=reg5 nand "1111111111111111"
+      if reg4="1111111111001111" then player1_win();
+    if i=7 reg6=reg6+"0000000000000100"
+      reg4=reg6 nand "0000000000000011"
+      reg5=reg5 nand "1111111111110011"
+      reg5=reg5 nand "1111111111111111"
+      if reg4="1111111111110011" then player1_win();
+  }
+}
+if player1_sum=4 then player1_win();
+if player2_sum=4 then player2_win();
+
+
+
+//////----------- vertical thinking---------
+if i=1 reg6=reg6+"0100000000000000"
+if i=2 reg6=reg6+"0001000000000000"
+if i=3 reg6=reg6+"0000010000000000"
+if i=4 reg6=reg6+"0000000100000000"
+if i=5 reg6=reg6+"0000000001000000"
+if i=6 reg6=reg6+"0000000000010000"
+if i=7 reg6=reg6+"0000000000000100"

@@ -1,0 +1,11 @@
+lui 0,0
+lui 1,0
+lui 2,0
+lui 3,10000
+start: sw 1,0,0
+  lui 2,0
+  delay:  addi 2,2,1
+    beq 2,3,end
+    beq 0,0,delay
+  end: addi 1,1,1
+beq 0,0,start

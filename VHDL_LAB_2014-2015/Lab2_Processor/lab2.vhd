@@ -1,0 +1,100 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_textio.all;
+use std.textio.all;
+
+
+entity lab2 is
+port(clk,rst : in std_logic;
+led_1,led_2,led_3,led_4: out std_logic);
+end lab2;
+
+architecture bhv of lab2 is
+
+
+  component ram_infer is
+	port(
+        clk           : in  std_logic;
+  	    rst           : in  std_logic;
+        dataIn        : in  std_logic_vector(15 downto 0);
+        write_address : in  std_logic_vector(7 downto 0);
+        read_address  : in  std_logic_vector(7 downto 0);
+        we            : in  std_logic;
+        dataOut       : out std_logic_vector(15 downto 0)
+);
+  end component;
+
+  component ram_infer_instr is
+	port(
+    clk           : in  std_logic;
+    rst           : in  std_logic;
+    dataIn_instr       : in  std_logic_vector(15 downto 0);
+    write_address_instr : in  std_logic_vector(7 downto 0);
+    read_address_instr  : in  std_logic_vector(7 downto 0);
+    pc                  : out std_logic_vector(7 downto 0);
+    dataOut_instr       : out std_logic_vector(15 downto 0)
+);
+  end component;
+
+  -- component program_counter is port (
+  --       clk, rst: in STD_LOGIC;
+  --       read_address_instr: out STD_LOGIC_VECTOR(7 downto 0);
+  --       pc_in:in  STD_LOGIC_VECTOR(7 downto 0)
+  --   );
+  -- end  component;
+
+  component controller is
+    port(
+      clk, rst: in std_logic;
+      read_address_instr: in std_logic_vector(7 downto 0);
+      dataOut : in std_logic_vector(15 downto 0);
+      dataOut_instr: in std_logic_vector(15 downto 0);
+      led_1, led_2, led_3, led_4: out std_logic
+    );
+  end  component;
+
+
+  component cpu is
+    port(
+    clk, rst: in std_logic;
+    we: out std_logic;
+    dataOut: in std_logic_vector(15 downto 0);
+    dataOut_instr: in std_logic_vector(15 downto 0);
+    dataIn: out std_logic_vector(15 downto 0);
+    read_address: out STD_LOGIC_VECTOR(7 downto 0);
+    read_address_instr : out STD_LOGIC_VECTOR(7 downto 0);
+    pc: in STD_LOGIC_VECTOR(7 downto 0);
+    --pc_in :out std_logic_vector(7 downto 0);
+    write_address: out std_logic_vector(7 downto 0)
+    );
+  end  component;
+
+
+
+  signal dataIn        : std_logic_vector(15 downto 0);
+  signal dataIn_instr        : std_logic_vector(15 downto 0);
+  signal write_address : std_logic_vector(7 downto 0);
+  signal write_address_instr : std_logic_vector(7 downto 0);
+  signal read_address  : std_logic_vector(7 downto 0);
+  signal read_address_instr  : std_logic_vector(7 downto 0);
+  signal we            : std_logic;
+  signal dataOut       : std_logic_vector(15 downto 0);
+  signal dataOut_instr       : std_logic_vector(15 downto 0);
+  signal pc         : STD_LOGIC_VECTOR(7 downto 0);
+
+  begin
+
+  ram: ram_infer port map(clk, rst, dataIn, write_address, read_address, we, dataOut);
+
+  instr: ram_infer_instr port map(clk, rst, dataIn_instr, write_address_instr, read_address_instr,pc, dataOut_instr);
+
+ -- pc: program_counter port map(clk, rst, read_address_instr, pc_in);
+
+  cnt: controller port map(clk, rst, read_address_instr, dataOut, dataOut_instr, led_1, led_2, led_3, led_4);
+
+  cp: cpu port map(clk, rst, we, dataOut, dataOut_instr, dataIn,
+  read_address, read_address_instr, pc, write_address);
+
+end bhv;

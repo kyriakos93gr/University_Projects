@@ -1,0 +1,10 @@
+
+State Machine - |lab2|cpu:cp|state
+Name state.DELAY2 state.DELAY1 state.REGWRITE state.MEMORY state.EXECUTE state.DECODE state.FETCH 
+state.FETCH 0 0 0 0 0 0 0 
+state.DECODE 0 0 0 0 0 1 1 
+state.EXECUTE 0 0 0 0 1 0 1 
+state.MEMORY 0 0 0 1 0 0 1 
+state.REGWRITE 0 0 1 0 0 0 1 
+state.DELAY1 0 1 0 0 0 0 1 
+state.DELAY2 1 0 0 0 0 0 1 

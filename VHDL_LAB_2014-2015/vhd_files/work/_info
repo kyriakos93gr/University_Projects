@@ -1,0 +1,452 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/rebelor/modelsimtest
+Ecpu
+Z0 w1434819123
+Z1 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 d/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim
+Z8 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/cpu.vhd
+Z9 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/cpu.vhd
+l0
+L8
+VT4ef8[jg2WWSBF2NKD]iR3
+!s100 =JIjOAX<JlBaG>B@1Dof62
+Z10 OV;C;10.3c;59
+32
+Z11 !s110 1434819126
+!i10b 1
+Z12 !s108 1434819126.090008
+Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/cpu.vhd|
+Z14 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/cpu.vhd|
+!i113 1
+Z15 o-work work -2002 -explicit
+Z16 tExplicit 1
+Acpuarch
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 3 cpu 0 22 T4ef8[jg2WWSBF2NKD]iR3
+l33
+L25
+V<YGeJdW<?`l4Wz=77QiEK0
+!s100 dZ55E8b=<l_4>4M:KbSZD1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Efaces
+Z17 w1434740971
+R3
+R4
+R5
+R6
+R7
+Z18 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/Faces.vhd
+Z19 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/Faces.vhd
+l0
+L5
+Vch?5k2iCbiOP_4O`H6NS[1
+!s100 cjeEkLA1847X8TKh4JgES3
+R10
+32
+R11
+!i10b 1
+Z20 !s108 1434819126.159308
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/Faces.vhd|
+Z22 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/Faces.vhd|
+!i113 1
+R15
+R16
+Artl
+R3
+R4
+R5
+R6
+DEx4 work 5 faces 0 22 ch?5k2iCbiOP_4O`H6NS[1
+l15
+L12
+VUgl:ze>^9Mi[Jf8SKQE<g2
+!s100 kOl=[?ij>Li@18_W:2W[R2
+R10
+32
+R11
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R15
+R16
+Eframebuffer
+Z23 w1434793760
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z24 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/FrameBuffer.vhd
+Z25 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/FrameBuffer.vhd
+l0
+L8
+VY^_4RoADYd87khEIG;?gj3
+!s100 :ZKXXdX:SU[79cfY]ZUdU3
+R10
+32
+R11
+!i10b 1
+Z26 !s108 1434819126.215017
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/FrameBuffer.vhd|
+Z28 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/FrameBuffer.vhd|
+!i113 1
+R15
+R16
+Artl
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 11 framebuffer 0 22 Y^_4RoADYd87khEIG;?gj3
+l47
+L20
+V5zTmXW:IcMl24HY_YYR<02
+!s100 P0V8K3=7z@G@^D=_0P^401
+R10
+32
+R11
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R15
+R16
+Einter_contr_test
+Z29 w1434392920
+R5
+R6
+R7
+Z30 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/inter_contr_test.vhd
+Z31 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/inter_contr_test.vhd
+l0
+L6
+VUH7hn3L76Rlg>zBUZ<=1;3
+!s100 Qa=kmAz`E[lTfnVOXhARE2
+R10
+32
+R11
+!i10b 1
+Z32 !s108 1434819126.281453
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/inter_contr_test.vhd|
+Z34 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/inter_contr_test.vhd|
+!i113 1
+R15
+R16
+Atest
+R5
+R6
+DEx4 work 16 inter_contr_test 0 22 UH7hn3L76Rlg>zBUZ<=1;3
+l37
+L9
+V9^[3b<8Faa;a>cSKIflGK1
+!s100 Oj`1DLADfUJBLZOkhfGP]3
+R10
+32
+R11
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R15
+R16
+Einterrupt_controller
+Z35 w1434807900
+R3
+R4
+R5
+R6
+R7
+Z36 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/interrupt_controller.vhd
+Z37 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/interrupt_controller.vhd
+l0
+L6
+VR`_I?g_Oah^ZeLE@i?z3h0
+!s100 <9l8M5?YiPaYG@N]fad=n1
+R10
+32
+R11
+!i10b 1
+Z38 !s108 1434819126.327540
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/interrupt_controller.vhd|
+Z40 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/interrupt_controller.vhd|
+!i113 1
+R15
+R16
+Ainterrupt_arch
+R3
+R4
+R5
+R6
+DEx4 work 20 interrupt_controller 0 22 R`_I?g_Oah^ZeLE@i?z3h0
+l25
+L17
+VOCb3I3gKA6aHzoh@C3>?R1
+!s100 @L4D2oFZ@RO<UPd0I<2Fh1
+R10
+32
+R11
+!i10b 1
+R38
+R39
+R40
+!i113 1
+R15
+R16
+Epaneldisplay
+Z41 w1434799647
+R3
+R4
+R5
+R6
+R7
+Z42 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/PanelDisplay.vhd
+Z43 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/PanelDisplay.vhd
+l0
+L6
+V=]TIhVMllH^4]z3K>ogjA1
+!s100 eO]GPiZY8>a?ZfK_I;29I1
+R10
+32
+R11
+!i10b 1
+Z44 !s108 1434819126.388194
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/PanelDisplay.vhd|
+Z46 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/PanelDisplay.vhd|
+!i113 1
+R15
+R16
+Apotato
+R3
+R4
+R5
+R6
+DEx4 work 12 paneldisplay 0 22 =]TIhVMllH^4]z3K>ogjA1
+l41
+L19
+V9UR^gI3E2D@V3?4YXJIP63
+!s100 nh7X>EU1o4Yd3]7P_P5`>3
+R10
+32
+R11
+!i10b 1
+R44
+R45
+R46
+!i113 1
+R15
+R16
+Eram_infer
+Z47 w1434794061
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z48 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer.vhd
+Z49 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer.vhd
+l0
+L9
+VKQG@lK5JOL:DNS<CSKMo40
+!s100 >:3KG71RkcCFA@fSfc:5:0
+R10
+32
+R11
+!i10b 1
+Z50 !s108 1434819126.448964
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer.vhd|
+Z52 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer.vhd|
+!i113 1
+R15
+R16
+Artl
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 9 ram_infer 0 22 KQG@lK5JOL:DNS<CSKMo40
+l56
+L18
+VWKVS8=Y@RZN91e^nKBlfL0
+!s100 <aEZUH3Dng8209z:e>`i?3
+R10
+32
+R11
+!i10b 1
+R50
+R51
+R52
+!i113 1
+R15
+R16
+Eram_infer_instr
+Z53 w1434799450
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z54 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer_instr.vhd
+Z55 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer_instr.vhd
+l0
+L9
+V8Z4R51?8[FlNg2FcZFa^b1
+!s100 z<`g4iWZGE1>FQ=7>Tce]3
+R10
+32
+R11
+!i10b 1
+Z56 !s108 1434819126.510532
+Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer_instr.vhd|
+Z58 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer_instr.vhd|
+!i113 1
+R15
+R16
+Artl
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 15 ram_infer_instr 0 22 8Z4R51?8[FlNg2FcZFa^b1
+l58
+L19
+V<72Y2V<4b^FLB@2V5ID0^2
+!s100 VeUV@F7B8lVSFii4A`RM32
+R10
+32
+R11
+!i10b 1
+R56
+R57
+R58
+!i113 1
+R15
+R16
+Escorefour
+Z59 w1434807191
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z60 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour.vhd
+Z61 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour.vhd
+l0
+L9
+VWMB2a3Y?8`Jk6iUNQf7E`3
+!s100 `bb[`ZnLFm2`iRM<NS:;N0
+R10
+32
+R11
+!i10b 1
+Z62 !s108 1434819126.571797
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour.vhd|
+Z64 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour.vhd|
+!i113 1
+R15
+R16
+Abhv
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 9 scorefour 0 22 WMB2a3Y?8`Jk6iUNQf7E`3
+l111
+L21
+V]LK;QDX?Alz2P4WhbYQld1
+!s100 1Yekm9`;fZeL3IWAB^61[1
+R10
+32
+R11
+!i10b 1
+R62
+R63
+R64
+!i113 1
+R15
+R16
+Escorefour_tb
+Z65 w1434807710
+R5
+R6
+R7
+Z66 8/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour_tb.vhd
+Z67 F/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour_tb.vhd
+l0
+L6
+VJ7V>MFLQ2IYoN8Pc@ZzHU1
+!s100 f?hI3b^Ne[3Y;_g=oRAQK0
+R10
+32
+R11
+!i10b 1
+Z68 !s108 1434819126.628770
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour_tb.vhd|
+Z70 !s107 /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour_tb.vhd|
+!i113 1
+R15
+R16
+Atest
+R5
+R6
+Z71 DEx4 work 12 scorefour_tb 0 22 J7V>MFLQ2IYoN8Pc@ZzHU1
+l122
+L9
+Z72 Vin@NV?3N4=6nfmE_lQPUA3
+Z73 !s100 7zmWAL3GfX0dYz1H[c=EY1
+R10
+32
+R11
+!i10b 1
+R68
+R69
+R70
+!i113 1
+R15
+R16

@@ -1,0 +1,526 @@
+C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity FrameBuffer
+-- Compiling architecture rtl of FrameBuffer
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(49): near "end": expecting IDENTIFIER
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(58): (vcom-1396) Object "clk" cannot appear within the same interface list in which it is declared.
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(58): Expression is not a signal.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(58): (vcom-1396) Object "rst" cannot appear within the same interface list in which it is declared.
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(58): Expression is not a signal.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(60): Cannot use name "rst" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(66): Cannot use name "clk" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(95): Cannot use name "rst" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(97): Illegal target for signal assignment.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(97): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(98): Illegal target for signal assignment.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(98): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(100): Cannot use name "clk" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(102): Illegal target for signal assignment.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(102): (vcom-1136) Unknown identifier "pixel_row".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(103): Cannot use name "pixel" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(103): Cannot drive signal 'pixel' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(103): (vcom-1136) Unknown identifier "pixel_row".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(104): Illegal target for signal assignment.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(104): Cannot use name "pixel" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(104): No feasible entries for infix operator "-".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(104): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(106): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(106): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(107): Illegal target for signal assignment.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(107): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(107): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(108): Illegal target for signal assignment.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(108): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(111): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(110): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(110): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(111): near "<=": expecting THEN
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(114): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(114): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(114): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(114): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(114): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(116): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(116): Type error resolving infix expression "<=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(117): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(117): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(117): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(118): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(118): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(118): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(118): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(118): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(119): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(119): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(119): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(120): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(120): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(120): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(120): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(120): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(121): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(121): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(121): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(122): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(122): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(122): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(122): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(122): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(123): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(123): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(123): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(124): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(124): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(124): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(124): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(124): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(125): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(125): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(125): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(126): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(126): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(126): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(126): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(126): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(127): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(127): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(127): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(130): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(130): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(130): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(130): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(130): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(132): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(132): Type error resolving infix expression "<=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(133): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(133): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(133): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(134): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(134): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(134): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(134): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(134): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(135): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(135): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(135): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(136): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(136): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(136): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(136): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(136): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(137): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(137): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(137): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(138): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(138): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(138): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(138): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(138): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(139): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(139): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(139): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(140): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(140): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(140): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(140): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(140): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(141): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(141): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(141): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(142): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(142): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(142): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(142): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(142): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(143): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(143): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(143): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(146): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(146): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(146): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(146): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(146): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(148): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(148): Type error resolving infix expression "<=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(149): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(149): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(149): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(150): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(150): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(150): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(150): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(150): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(151): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(151): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(151): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(152): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(152): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(152): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(152): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(152): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(153): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(153): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(153): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(154): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(154): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(154): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(154): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(154): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(155): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(155): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(155): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(156): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(156): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(156): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(156): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(156): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(157): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(157): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(157): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(158): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(158): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(158): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(158): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(158): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(159): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(159): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(159): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(162): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(162): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(162): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(162): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(162): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(164): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(164): Type error resolving infix expression "<=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(165): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(165): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(165): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(166): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(166): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(166): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(166): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(166): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(167): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(167): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(167): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(168): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(168): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(168): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(168): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(168): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(169): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(169): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(169): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(170): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(170): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(170): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(170): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(170): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(171): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(171): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(171): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(172): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(172): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(172): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(172): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(172): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(173): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(173): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(173): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(174): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(174): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(174): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(174): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(174): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(175): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(175): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(175): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(178): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(178): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(178): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(178): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(178): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(180): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(180): Type error resolving infix expression "<=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(181): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(181): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(181): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(182): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(182): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(182): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(182): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(182): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(183): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(183): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(183): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(184): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(184): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(184): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(184): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(184): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(185): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(185): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(185): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(186): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(186): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(186): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(186): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(186): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(187): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(187): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(187): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(188): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(188): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(188): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(188): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(188): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(189): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(189): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(189): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(190): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(190): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(190): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(190): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(190): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(191): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(191): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(191): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(194): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(194): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(194): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(194): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(194): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(196): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(196): Type error resolving infix expression "<=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(197): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(197): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(197): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(198): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(198): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(198): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(198): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(198): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(199): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(199): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(199): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(200): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(200): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(200): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(200): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(200): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(201): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(201): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(201): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(202): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(202): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(202): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(202): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(202): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(203): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(203): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(203): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(204): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(204): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(204): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(204): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(204): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(205): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(205): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(205): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(206): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(206): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(206): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(206): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(206): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(207): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(207): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(207): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(210): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(210): (vcom-1136) Unknown identifier "pixel_now".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(210): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(210): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(210): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(212): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(212): Type error resolving infix expression "<=" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(213): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(213): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(213): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(214): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(214): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(214): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(214): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(214): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(215): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(215): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(215): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(216): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(216): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(216): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(216): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(216): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(217): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(217): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(217): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(218): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(218): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(218): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(218): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(218): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(219): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(219): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(219): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(220): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(220): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(220): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(220): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(220): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(221): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(221): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(221): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(222): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(222): (vcom-1136) Unknown identifier "v_count".
+
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(222): Bad expression in left operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(222): Bad expression in right operand of infix expression "and".
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(222): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(223): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(223): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(223): Cannot resolve indexed name (type ieee.std_logic_1164.STD_LOGIC_VECTOR) as type ieee.std_logic_1164.STD_LOGIC.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(226): Cannot use name "color" until the interface list is complete.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(226): Cannot drive signal 'color' of mode IN.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(226): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+** Error: C:/Users/christos/Desktop/prospathia2/modelsim/FrameBuffer.vhd(228): near "if": expecting PROCESS
+
+} {12.0 14.0 15.0 17.0 18.0 24.0 25.0 27.0 28.0 31.0 32.0 35.0 36.0 40.0 41.0 42.0 43.0 46.0 47.0 48.0 49.0 51.0 52.0 53.0 54.0 55.0 56.0 59.0 60.0 61.0 62.0 66.0 67.0 72.0 73.0 74.0 75.0 82.0 83.0 84.0 85.0 92.0 93.0 94.0 95.0 102.0 103.0 104.0 105.0 112.0 113.0 114.0 115.0 122.0 123.0 124.0 125.0 129.0 130.0 135.0 136.0 137.0 138.0 145.0 146.0 147.0 148.0 155.0 156.0 157.0 158.0 165.0 166.0 167.0 168.0 175.0 176.0 177.0 178.0 185.0 186.0 187.0 188.0 192.0 193.0 198.0 199.0 200.0 201.0 208.0 209.0 210.0 211.0 218.0 219.0 220.0 221.0 228.0 229.0 230.0 231.0 238.0 239.0 240.0 241.0 248.0 249.0 250.0 251.0 255.0 256.0 261.0 262.0 263.0 264.0 271.0 272.0 273.0 274.0 281.0 282.0 283.0 284.0 291.0 292.0 293.0 294.0 301.0 302.0 303.0 304.0 311.0 312.0 313.0 314.0 318.0 319.0 324.0 325.0 326.0 327.0 334.0 335.0 336.0 337.0 344.0 345.0 346.0 347.0 354.0 355.0 356.0 357.0 364.0 365.0 366.0 367.0 374.0 375.0 376.0 377.0 381.0 382.0 387.0 388.0 389.0 390.0 397.0 398.0 399.0 400.0 407.0 408.0 409.0 410.0 417.0 418.0 419.0 420.0 427.0 428.0 429.0 430.0 437.0 438.0 439.0 440.0 444.0 445.0 450.0 451.0 452.0 453.0 460.0 461.0 462.0 463.0 470.0 471.0 472.0 473.0 480.0 481.0 482.0 483.0 490.0 491.0 492.0 493.0 503.0} {}} /home/kyriakos/git/vlsi-bonus-project-2014-2015/prospathia2/modelsim/PanelDisplay.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi-bonus-project-2014-2015/prospathia2/modelsim/PanelDisplay.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity PanelDisplay
+-- Compiling architecture potato of PanelDisplay
+
+} {} {}} C:/Users/christos/Desktop/prospathia2/modelsim/Faces.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/christos/Desktop/prospathia2/modelsim/Faces.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Faces
+-- Compiling architecture rtl of Faces
+
+} {} {}}

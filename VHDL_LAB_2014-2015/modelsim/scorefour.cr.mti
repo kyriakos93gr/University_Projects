@@ -1,0 +1,95 @@
+scorefour_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour_tb.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity scorefour_tb
+-- Compiling architecture test of scorefour_tb
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/PanelDisplay.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/PanelDisplay.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity PanelDisplay
+-- Compiling architecture potato of PanelDisplay
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer_instr.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer_instr.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer_instr
+-- Compiling architecture rtl of ram_infer_instr
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/inter_contr_test.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/inter_contr_test.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity inter_contr_test
+-- Compiling architecture test of inter_contr_test
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/Faces.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/Faces.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Faces
+-- Compiling architecture rtl of Faces
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/ram_infer.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer
+-- Compiling architecture rtl of ram_infer
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/cpu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/cpu.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity cpu
+-- Compiling architecture cpuArch of cpu
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/interrupt_controller.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/interrupt_controller.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity interrupt_controller
+-- Compiling architecture interrupt_arch of interrupt_controller
+
+} {} {}} /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi-bonus-project-2014-2015/modelsim/scorefour.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity scorefour
+-- Compiling architecture bhv of scorefour
+
+} {} {}}

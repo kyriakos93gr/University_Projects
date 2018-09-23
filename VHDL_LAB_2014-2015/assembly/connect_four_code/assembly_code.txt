@@ -1,0 +1,369 @@
+addi 0,0,0
+read_input:
+  addi 3,0,5555                  # reads input and goes to save stone if reg7 = 5555
+  beq 3,7,check_availability
+  beq 0,0,read_input
+  sw 0,0,mem_k                   # k = 0
+check_avail:
+  # multiplication
+  add 2,1,0                      # mem_line[(7*k)] //reg2 = reg1(k)
+  addi 3,0,7                     # reg3 = 7
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  add 1,1,6                      # reg6 = 7*k + 2
+  lw 2,1,0                       # reg2 = mem_line [ 7*k + 2]
+  beq 2,0,save_stone
+  addi 4,0,for_loop_k            # go to k = k + 1
+  jalr 4,7
+  addi 3,0,rows                  # if k = limit
+  beq 3,1,read_input             # if k reaches limit go to read_input
+  beq 0,0,check_availability
+save_stone:
+  addi 5,5,1                     # increment player by cause now it is 0/1
+  sw 5,2,0
+horizontal:
+  add 5,0,0
+  add 6,0,0
+  sw 0,0,mem_k                   # k = 0
+  sw 0,0,mem_i                   # i = 0
+horiz_start:
+  add 2,1,0                      # mem_line[(7*k)+i] //reg2 = reg1(k)
+  addi 3,0,7                     # reg3 = 7
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,cols                  # if i = limit
+  beq 3,2,horiz_loop_start
+  beq 0,0, horiz_start
+horiz_lp_start:
+  addi 4,0,for_loop_k            # go to k = k + 1
+  jalr 4,7
+  addi 3,0,rows                  # if k = limit
+  beq 3,1,vertical
+  beq 0,0,horiz_start
+vertical:
+  add 5,0,0
+  add 6,0,0
+  sw 0,0,mem_k                   # k = 0
+  sw 0,0,mem_i                   # i = 0
+vertic_start:
+  add 2,1,0                      # mem_line[(7*k)+i] //reg2 = reg1(k)
+  addi 3,0,7                     # reg3 = 7
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_k            # go to k = k + 1
+  jalr 4,7
+  addi 3,0,rows                  # if k = limit
+  beq 3,1,vertic_loop_start
+  beq 0,0, vertic_start
+vertic_lp_start:
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,cols                  # if i = limit
+  beq 3,2,slash_1
+  beq 0,0,vertic_start
+slash1:
+  add 5,0,0
+  add 6,0,0
+  sw 3,0,mem_k                   # k = 3
+  sw 0,0,mem_i                   # i = 0
+slash1_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(6*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 6
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,3                     # if i = limit
+  beq 3,2,slash6
+  beq 0,0, slash1_start
+slash6:
+  add 5,0,0
+  add 6,0,0
+  sw 18,0,mem_k                  # k = 18
+  sw 0,0,mem_i                   # i = 0
+slash6_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(6*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 6
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,3                     # if i = limit
+  beq 3,2,slash2
+  beq 0,0, slash6_start
+slash2:
+  add 5,0,0
+  add 6,0,0
+  sw 4,0,mem_k                   # k = 4
+  sw 0,0,mem_i                   # i = 0
+slash2_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(6*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 6
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,4                     # if i = limit
+  beq 3,2,slash5
+  beq 0,0, slash2_start
+slash5:
+  add 5,0,0
+  add 6,0,0
+  sw 12,0,mem_k                  # k = 12
+  sw 0,0,mem_i                   # i = 0
+slash5_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(6*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 6
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,4                     # if i = limit
+  beq 3,2,slash3
+  beq 0,0, slash5_start
+slash3:
+  add 5,0,0
+  add 6,0,0
+  sw 5,0,mem_k                   # k = 5
+  sw 0,0,mem_i                   # i = 0
+slash3_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(6*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 6
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,5                     # if i = limit
+  beq 3,2,slash4
+  beq 0,0, slash3_start
+slash4:
+  add 5,0,0
+  add 6,0,0
+  sw 6,0,mem_k                   # k = 6
+  sw 0,0,mem_i                   # i = 0
+slash4_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(6*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 6
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,5                     # if i = limit
+  beq 3,2,antislash1
+  beq 0,0, slash4_start
+antislash1:
+  add 5,0,0
+  add 6,0,0
+  sw 14,0,mem_k                  # k = 14
+  sw 0,0,mem_i                   # i = 0
+antislash1_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(8*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 8
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,3                     # if i = limit
+  beq 3,2,antislash6
+  beq 0,0, antislash1_start
+antislash6:
+  add 5,0,0
+  add 6,0,0
+  sw 6,0,mem_k                   # k = 6
+  sw 0,0,mem_i                   # i = 0
+antislash6_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(8*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 8
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,3                     # if i = limit
+  beq 3,2,antislash2
+  beq 0,0, antislash6_start
+antislash2:
+  add 5,0,0
+  add 6,0,0
+  sw 7,0,mem_k                   # k = 7
+  sw 0,0,mem_i                   # i = 0
+antislash2_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(8*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 8
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,4                     # if i = limit
+  beq 3,2,antislash5
+  beq 0,0, antislash2_start
+antislash5:
+  add 5,0,0
+  add 6,0,0
+  sw 2,0,mem_k                   # k = 2
+  sw 0,0,mem_i                   # i = 0
+antislash5_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(8*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 8
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,4                     # if i = limit
+  beq 3,2,antislash3
+  beq 0,0, antislash5_start
+antislash3:
+  add 5,0,0
+  add 6,0,0
+  sw 0,0,mem_k                   # k = 0
+  sw 0,0,mem_i                   # i = 0
+antislash3_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(8*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 8
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,5                     # if i = limit
+  beq 3,2,antislash4
+  beq 0,0, antislash3_start
+antislash4:
+  add 5,0,0
+  add 6,0,0
+  sw 0,0,mem_k                   # k = 0
+  sw 0,0,mem_i                   # i = 0
+antislash4_start:
+  lw 1,0,mem_k
+  add 2,1,0                      # mem_line[(8*k)+i] //reg2 = reg1(k)
+  addi 3,0,6                     # reg3 = 8
+  addi 4,0,multiply              # goes to multiply
+  jalr 4,7
+  lw 3,0,mem_i                   # reg3 = i
+  add 1,3,0                      # reg1 = i + multiply
+  addi 4,0,checks                # call for checks
+  jalr 4,7
+  addi 4,0,for_loop_i            # go to i = i + 1
+  jalr 4,7
+  addi 3,0,5                     # if i = limit
+  beq 3,2,check_finish
+  beq 0,0, antislash4_start
+for_loop_k:
+  lw 1,0,mem_k
+  addi 1,1,1                     # k = k + 1
+  sw 1,0,mem_k
+  jalr 7,4
+for_loop_i:
+  lw 2,0,mem_i
+  addi 2,2,1                     # i = i + 1
+  sw 2,0,mem_i
+  jalr 7,4
+checks:
+  lw 2,1,0                       # reg2 = memline[]
+  addi 1,0,1                     # reg1 = 1
+  beq 1,2,is_player_1
+  addi 1,0,2                     # reg1 = 2
+  beq 1,2,is_player_2
+  addi 1,0,0                     # reg1 = 0
+  beq 1,2,is_empty               # when one of these is true jumps to main code
+is_player_1:
+  addi 6,0,0                     # player2 sum = 0
+  addi 5,5,1                     # player1 sum += 1
+  beq 5,4,player1win
+  jalr 7,4
+is_player_1:
+  addi 5,0,0                     # player1 sum = 0
+  addi 6,6,1                     # player2 sum += 1
+  beq 6,4,player2win
+  jalr 7,4
+is_empty:
+  add 5,0,0                      # player1 sum = 0
+  add 6,0,0                      # player2 sum = 0
+  jalr 7,4
+multiply:
+  add 1,0,0                      # reg1 is our "storage" a=>reg2, b=>reg3
+MulLoop:
+  add 1,2,0                      # reg1<=reg1+a
+  addi 3,3,-1                    # decrease b by 1
+  beq 3,0,end_mul                # if b=0 escape loop-
+  beq 3,3,MulLoop                # if b=b go to MulLoop
+end_mul:
+  jalr 7,3                       # goes to the address previous of multiplication
+check_finish:
+  beq 0,0,read_input
+player1win:
+  addi 0,0,0
+player2win:
+  addi 0,0,0
+empty:         .fill 0           # constant definitions
+player1:       .fill 1
+player2:       .fill 2
+rows:          .fill 5
+cols:          .fill 6
+player1_sum_0: .fill 0           # player1 = reg5
+player2_sum_0: .fill 0           # player2 = reg6
+mem_k:         .fill 500
+mem_i:         .fill 501

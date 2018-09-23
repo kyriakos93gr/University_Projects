@@ -1,0 +1,114 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity PanelDisplay is
+  port (clk : in std_logic;
+  rst       : in std_logic;
+  hsync     : out std_logic;
+  vsync     : out std_logic;
+  red       : out std_logic_vector(3 downto 0);
+  green     : out std_logic_vector(3 downto 0);
+  blue      : out std_logic_vector(3 downto 0));
+end PanelDisplay;
+
+architecture syncing of PanelDisplay is
+
+constant HP:  integer:=640;
+constant HFP: integer:=16 ;
+constant HBP: integer:=48 ;
+constant HSP: integer:=96 ;
+constant VP:  integer:=480;
+constant VFP: integer:=10 ;
+constant VBP: integer:=33 ;
+constant VSP: integer:=2  ;
+
+signal a,b          : std_logic;
+signal pixelclock   : std_logic;
+signal pixelcounter : std_logic_vector(9 downto 0);
+signal linecounter  : std_logic_vector(9 downto 0);
+
+begin
+--reset and a<=b
+  process(clk,rst)
+  begin
+	  if rst='1' then
+		 a<='0';
+	  elsif	rising_edge(clk) then
+		 a<=b;
+	  end if;
+  end process;
+  
+  b <= not a;
+  pixelclock <= a;
+    
+  --hsync
+  hsync<='0' when pixelcounter>=(HP+HFP) and pixelcounter<=(HP+HFP+HSP-1) else '1';
+
+  --vsync
+  vsync<='0' when linecounter>=(VP+VFP) and linecounter<=(VP+VFP+VSP-1) else '1';
+  
+  --send  color
+  process(pixelclock)
+  begin
+    --horizontal line
+    if rising_edge(pixelclock) then
+      --active video
+      if pixelcounter="1100100000" then--800
+        pixelcounter<=(others=>'0');
+        linecounter<=linecounter+1;
+      end if;
+      if linecounter="1000001100" then
+        linecounter<=(others=>'0');
+      end if;
+      if pixelcounter<"1010000000" then--640(0to639)
+        red     <=(others=>'0');
+        green   <=(others=>'0');
+        blue    <=(others=>'0');
+        pixelcounter <=pixelcounter+1;
+      --front porch
+      elsif pixelcounter>"1001111111" and pixelcounter<"1010010000" then--639 and 656(640to655)
+        red     <=(others=>'0');
+        green   <=(others=>'0');
+        blue    <=(others=>'0');
+        pixelcounter <=pixelcounter+1;
+      --back porch
+      elsif pixelcounter>"1011101111" and pixelcounter<"1100100000" then--751 and 800(752to799)
+        red     <=(others=>'0');
+        green   <=(others=>'0');
+        blue    <=(others=>'0');
+        pixelcounter <=pixelcounter+1;
+      end if;
+
+      --block sketching----------------------------------------------------------------------------
+      if (linecounter<=0011101010 and pixelcounter>0000010011 and pixelcounter<=0100110101) then --line smaller than 234 and pixel between 19 and 309,red cube
+	      red     <=(others=>'1');
+        green   <=(others=>'0');
+        blue    <=(others=>'0');
+        pixelcounter <=pixelcounter+1;
+      elsif (linecounter<=0011101010 and pixelcounter>0101001001 and pixelcounter<=1001101011) then --pixel between 329 and 619,green cube
+	      red     <=(others=>'0');
+        green   <=(others=>'1');
+        blue    <=(others=>'0');
+        pixelcounter <=pixelcounter+1;
+
+      elsif (linecounter>0011110100 and linecounter<=0111010101 and pixelcounter>0000010011 and pixelcounter <=0100110101) then --line between 244 and 469
+	   	--pixel between 19 and 309,blue cube
+
+	      red     <=(others=>'0');
+        green   <=(others=>'0');
+        blue    <=(others=>'1');
+        pixelcounter <=pixelcounter+1;
+
+      elsif (linecounter>0011110100 and linecounter<=0111010101 and pixelcounter>0101001001 and pixelcounter<=1001101011) then --pixel between 329 and 619,white cube
+
+	      red     <=(others=>'1');
+        green   <=(others=>'1');
+        blue    <=(others=>'1');
+        pixelcounter <=pixelcounter+1;
+
+      end if;
+    end if;
+  end process;
+
+end syncing;

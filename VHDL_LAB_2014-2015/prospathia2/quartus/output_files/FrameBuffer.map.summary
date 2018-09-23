@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Jun 14 13:24:17 2015
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Revision Name : FrameBuffer
+Top-level Entity Name : PanelDisplay
+Family : Cyclone II
+Total logic elements : 40
+    Total combinational functions : 40
+    Dedicated logic registers : 21
+Total registers : 21
+Total pins : 16
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

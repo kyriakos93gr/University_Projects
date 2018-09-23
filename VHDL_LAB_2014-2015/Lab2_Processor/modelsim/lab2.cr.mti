@@ -1,0 +1,169 @@
+/home/rebelor/git/vlsi/Lab2_Processor/modelsim/program_counter.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/modelsim/program_counter.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity program_counter
+-- Compiling architecture pcArch of program_counter
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/ram_infer_instr.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/ram_infer_instr.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer_instr
+-- Compiling architecture rtl of ram_infer_instr
+
+} {} {}} /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/cpu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/cpu.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity cpu
+-- Compiling architecture cpuArch of cpu
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/modelsim/ram_infer_instr.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/modelsim/ram_infer_instr.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer_instr
+-- Compiling architecture rtl of ram_infer_instr
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/controller.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/controller.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity controller
+-- Compiling architecture conArch of controller
+
+} {} {}} /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/ram_infer.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/ram_infer.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer
+-- Compiling architecture rtl of ram_infer
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/tb.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb
+-- Compiling architecture test of tb
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/cpu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/cpu.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity cpu
+-- Compiling architecture cpuArch of cpu
+
+} {} {}} /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/tb.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb
+-- Compiling architecture test of tb
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/modelsim/lab2.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/modelsim/lab2.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity lab2
+-- Compiling architecture bhv of lab2
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/ram_infer.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/ram_infer.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer
+-- Compiling architecture rtl of ram_infer
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/modelsim/ram_infer.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/modelsim/ram_infer.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer
+-- Compiling architecture rtl of ram_infer
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/modelsim/controller.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/modelsim/controller.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity controller
+-- Compiling architecture conArch of controller
+
+} {} {}} /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/ram_infer_instr.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab2_Processor/modelsim/ram_infer_instr.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity ram_infer_instr
+-- Compiling architecture rtl of ram_infer_instr
+
+} {} {}} /home/rebelor/git/vlsi/Lab2_Processor/modelsim/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rebelor/git/vlsi/Lab2_Processor/modelsim/tb.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb
+-- Compiling architecture test of tb
+
+} {} {}}

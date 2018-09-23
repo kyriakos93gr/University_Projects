@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Jun 20 20:16:11 2015
+Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Revision Name : scorefour
+Top-level Entity Name : scorefour
+Family : Cyclone II
+Total logic elements : 1,055
+    Total combinational functions : 833
+    Dedicated logic registers : 433
+Total registers : 433
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 8,192
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

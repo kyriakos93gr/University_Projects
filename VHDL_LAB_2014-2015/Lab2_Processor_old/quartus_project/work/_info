@@ -1,0 +1,292 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/kyriakos/git/vlsi
+Econtroller
+Z0 w1430309980
+Z1 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 d/home/kyriakos/vlsi
+Z8 8/home/kyriakos/vlsi/lab2.vhd
+Z9 F/home/kyriakos/vlsi/lab2.vhd
+l0
+L189
+V@gndVYaa;2ZFVS8Xc^]OQ2
+!s100 M_0clLTz>^<Oo=IBlinAY1
+Z10 OV;C;10.3c;59
+32
+Z11 !s110 1430309983
+!i10b 1
+Z12 !s108 1430309982.973524
+Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/kyriakos/vlsi/lab2.vhd|
+Z14 !s107 /home/kyriakos/vlsi/lab2.vhd|
+!i113 1
+Z15 o-work work -2002 -explicit
+Z16 tExplicit 1
+Aconarch
+R1
+R2
+R3
+R4
+R5
+R6
+Z17 DEx4 work 10 controller 0 22 @gndVYaa;2ZFVS8Xc^]OQ2
+l200
+L198
+Z18 VBdY=RM5B<z0eRb6OdHALS2
+Z19 !s100 >zXFCo^F5bX_:Ab:K>CBB3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Ecpu
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+l0
+L230
+VBnc3XTHJ_aCPO=QH^n=FT3
+!s100 ?<?fC^f2^z`KLA^AHVX:K2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Acpuarch
+R1
+R2
+R3
+R4
+R5
+R6
+Z20 DEx4 work 3 cpu 0 22 Bnc3XTHJ_aCPO=QH^n=FT3
+l248
+L244
+Z21 V47QnM]Bm;hdH7LF@T1BT91
+Z22 !s100 oV4L8I8XUg`bI]1mGKXh11
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eprogram_counter
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+l0
+L156
+V6FGYa>k5e`j;BM]SdVWbB2
+!s100 I<d<W@^GJlf<D4Dm@g^cD3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Apcarch
+R1
+R2
+R3
+R4
+R5
+R6
+Z23 DEx4 work 15 program_counter 0 22 6FGYa>k5e`j;BM]SdVWbB2
+l166
+L164
+Z24 V]TcVX47`O0hgROfNKZYnd3
+Z25 !s100 cQj]7BEX0eJ8CkCKJS;BD1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eram_infer
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+l0
+L86
+V7o]geX5BHJ;fU2aZ<mbmj2
+!s100 b6IUdWzeSbB>EnEY:WQFS2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Artl
+R1
+R2
+R3
+R4
+R5
+R6
+Z26 DEx4 work 9 ram_infer 0 22 7o]geX5BHJ;fU2aZ<mbmj2
+l134
+L95
+Z27 VdkoZ7V5]b72IfRPA[9C_23
+Z28 !s100 j7lP1ELLzkXg0]dGhi@hc1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eram_infer_instr
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+l0
+L9
+VTKZOe1V11??QAhX@C1K<]0
+!s100 Wc4_hX?3XOi9Q8@WZ5W7[2
+R10
+32
+Z29 !s110 1430309982
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Artl
+R1
+R2
+R3
+R4
+R5
+R6
+Z30 DEx4 work 15 ram_infer_instr 0 22 TKZOe1V11??QAhX@C1K<]0
+l58
+L19
+Z31 V]?iAUG8U4^X^?nP_R8:lM1
+Z32 !s100 Qo`4BNLZWG[z3;iYWWzLj3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Etop_level
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+l0
+L335
+VRWjl61Gn<YKWjod:GBz3C1
+!s100 ]UB]a?G>U]6eYfRJhT5c31
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Abhv
+R1
+R2
+R3
+R4
+R5
+R6
+Z33 DEx4 work 9 top_level 0 22 RWjl61Gn<YKWjod:GBz3C1
+l409
+L340
+Z34 VT[SYki[Om=1oRdiX1KM?l0
+Z35 !s100 Fb3;GlIOB:1>ZT<kT70PH2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16

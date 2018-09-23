@@ -1,0 +1,485 @@
+<html>
+<head>
+<title> VHDL source for simple processor </title>
+</head>
+<body bgcolor=#ffffff>
+<h1>VHDL source for simple processor</h1>
+<h2>See section 6 of the notes for description</h2>
+<p>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;</pre>
+<pre>entity program_counter is
+    port (
+        clk, en_A, ld, inc, reset: in STD_LOGIC;
+        aBus: out STD_LOGIC_VECTOR(15 downto 0);
+        dBus: in STD_LOGIC_VECTOR(15 downto 0)
+    );
+end program_counter;</pre>
+<pre>architecture pcArch of program_counter is
+signal pcReg: STD_LOGIC_VECTOR(15 downto 0);
+begin
+  process(clk) begin
+  	if clk'event and clk = '1' then 
+  		if reset = '1' then
+  			pcReg &lt;= x&quot;0000&quot;;
+  		elsif ld = '1' then
+  			pcReg &lt;= dBus;
+  		elsif inc = '1' then
+  			pcReg &lt;= pcReg + x&quot;0001&quot;;
+  		end if;
+  	end if;
+  end process;
+  aBus &lt;= pcReg when en_A = '1' else &quot;ZZZZZZZZZZZZZZZZ&quot;;
+end pcArch;</pre>
+<pre>---------------------------------------------------------</pre>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;</pre>
+<pre>entity instruction_register is
+    port (
+        clk, en_A, en_D, ld, reset: in STD_LOGIC;
+        aBus: out STD_LOGIC_VECTOR(15 downto 0);
+        dBus: inout STD_LOGIC_VECTOR(15 downto 0);
+        load, store, add, neg, halt, branch: out STD_LOGIC;
+        cbranch, iload, istore, dload, dadd: out STD_LOGIC
+    );
+end instruction_register;</pre>
+<pre>architecture irArch of instruction_register is
+signal irReg: STD_LOGIC_VECTOR(15 downto 0);
+begin
+  process(clk) begin
+  	if clk'event and clk = '0' then
+  		if reset = '1' then
+  			irReg &lt;= x&quot;0000&quot;;
+  		elsif ld = '1' then
+  			irReg &lt;= dBus;
+  		end if;
+  	end if;
+  end process;
+  </pre>
+<pre>  aBus &lt;= &quot;0000&quot; &amp; irReg(11 downto 0) when en_A = '1' else
+  	  &quot;ZZZZZZZZZZZZZZZZ&quot;;
+  dBus &lt;= &quot;0000&quot; &amp; irReg(11 downto 0) when en_D = '1' else
+  	  &quot;ZZZZZZZZZZZZZZZZ&quot;;
+  	  </pre>
+<pre>  load    &lt;= '1' when irReg(15 downto 12) = x&quot;0&quot; 	else '0';
+  store   &lt;= '1' when irReg(15 downto 12) = x&quot;1&quot; 	else '0';
+  add     &lt;= '1' when irReg(15 downto 12) = x&quot;2&quot; 	else '0';
+  neg     &lt;= '1' when irReg = x&quot;3&quot; &amp; x&quot;000&quot; 	else '0';
+  halt    &lt;= '1' when irReg = x&quot;3&quot; &amp; x&quot;001&quot; 	else '0';
+  branch  &lt;= '1' when irReg(15 downto 12) = x&quot;4&quot; 	else '0';
+  cbranch &lt;= '1' when irReg(15 downto 12) = x&quot;5&quot; 	else '0';
+  iload   &lt;= '1' when irReg(15 downto 12) = x&quot;6&quot; 	else '0';
+  istore  &lt;= '1' when irReg(15 downto 12) = x&quot;7&quot; 	else '0';
+  dload   &lt;= '1' when irReg(15 downto 12) = x&quot;8&quot; 	else '0';
+  dadd    &lt;= '1' when irReg(15 downto 12) = x&quot;9&quot; 	else '0';  
+end irArch;</pre>
+<pre>---------------------------------------------------------</pre>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;</pre>
+<pre>entity indirect_addr_register is
+    port (
+        clk, en_A, ld, reset: in STD_LOGIC;
+        aBus: out STD_LOGIC_VECTOR(15 downto 0);
+        dBus:  in STD_LOGIC_VECTOR(15 downto 0)
+    );
+end indirect_addr_register;</pre>
+<pre>architecture iarArch of indirect_addr_register is
+signal iarReg: STD_LOGIC_VECTOR(15 downto 0);
+begin
+  process(clk) begin
+  	if clk'event and clk = '1' then
+  		if reset = '1' then
+  			iarReg &lt;= x&quot;0000&quot;;
+  		elsif ld = '1' then
+  			iarReg &lt;= dBus;
+  		end if;
+  	end if;
+  end process;
+  aBus &lt;= iarReg when en_A = '1' else
+  	  &quot;ZZZZZZZZZZZZZZZZ&quot;;
+end iarArch;</pre>
+<pre>---------------------------------------------------------</pre>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;</pre>
+<pre>entity accumulator is
+    port (
+        clk, en_D, ld, selAlu, reset: in STD_LOGIC;
+        aluD: in STD_LOGIC_VECTOR(15 downto 0);
+        dBus: inout STD_LOGIC_VECTOR(15 downto 0);
+        q: out STD_LOGIC_VECTOR(15 downto 0)
+    );
+end accumulator;</pre>
+<pre>architecture accArch of accumulator is
+signal accReg: STD_LOGIC_VECTOR(15 downto 0);
+begin
+  process(clk) begin
+  	if clk'event and clk = '1' then
+  		if reset = '1' then
+  			accReg &lt;= x&quot;0000&quot;;
+  		elsif ld = '1' and selAlu = '1' then
+  			accReg &lt;= aluD;
+  		elsif ld = '1' and selAlu = '0' then
+  			accReg &lt;= dBus;
+  		end if;
+  	end if;
+  end process;
+  dBus &lt;= accReg when en_D = '1' else
+  	  &quot;ZZZZZZZZZZZZZZZZ&quot;;
+  q &lt;= accReg;
+end accArch;</pre>
+<pre>---------------------------------------------------------</pre>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;</pre>
+<pre>entity alu is
+    port (
+        op: in STD_LOGIC_VECTOR(1 downto 0);
+        accD: in STD_LOGIC_VECTOR(15 downto 0);
+        dBus: in STD_LOGIC_VECTOR(15 downto 0);
+        result: out STD_LOGIC_VECTOR(15 downto 0);
+        accZ: out STD_LOGIC
+    );
+end alu;</pre>
+<pre>architecture aluArch of alu is
+begin
+  result &lt;= (not accD) + x&quot;0001&quot; when op =&quot;00&quot; else
+  	    accD + dBus when op =&quot;01&quot; else
+  	    x&quot;0000&quot;;
+  accZ &lt;= not (accD(0) or  accD(1) or  accD(2) or  accD(3) or
+  	       accD(4) or  accD(5) or  accD(6) or  accD(7) or 
+  	       accD(8) or  accD(9) or accD(10) or accD(11) or 
+  	      accD(12) or accD(13) or accD(14) or accD(15) 
+  	  );
+end aluArch;</pre>
+<pre>---------------------------------------------------------</pre>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;</pre>
+<pre>entity ram is
+    port (
+        r_w, en, reset: in STD_LOGIC;
+        aBus: in STD_LOGIC_VECTOR(15 downto 0);
+        dBus: inout STD_LOGIC_VECTOR(15 downto 0)
+    );
+end ram;</pre>
+<pre>architecture ramArch of ram is
+type ram_typ is array(0 to 63) of STD_LOGIC_VECTOR(15 downto 0);
+signal ram: ram_typ;
+begin
+  process(reset, r_w) begin
+  	if reset = '1' then
+  		ram(0) &lt;= x&quot;000A&quot;;
+  		ram(1) &lt;= x&quot;3000&quot;;
+  		ram(2) &lt;= x&quot;200B&quot;;
+  		ram(3) &lt;= x&quot;100C&quot;;
+  		ram(4) &lt;= x&quot;3001&quot;;
+  		ram(10) &lt;= x&quot;0010&quot;;
+  		ram(11) &lt;= x&quot;0011&quot;;
+  		for i in 12 to 63 loop
+  			ram(i) &lt;= x&quot;0000&quot;;
+  		end loop;
+ 	elsif r_w'event and r_w = '0' then
+  		ram(conv_integer(unsigned(aBus))) &lt;= dBus;
+  	end if;
+  end process;
+  dBus &lt;= ram(conv_integer(unsigned(aBus)))
+  		when reset = '0' and en = '1' and r_w = '1' else
+	  &quot;ZZZZZZZZZZZZZZZZ&quot;;
+end ramArch;</pre>
+<pre>---------------------------------------------------------</pre>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;</pre>
+<pre>entity controller is
+    port (
+    	clk, reset:			in  STD_LOGIC;
+    	mem_enD, mem_rw: 			out STD_LOGIC;
+    	pc_enA, pc_ld, pc_inc: 	out STD_LOGIC;
+    	</pre>
+<pre>    	ir_enA, ir_enD, ir_ld: 	out STD_LOGIC;
+    	ir_load, ir_store, ir_add:	in  STD_LOGIC;
+	ir_neg, ir_halt, ir_branch: 	in  STD_LOGIC;
+        ir_cbranch, ir_iload:			in  STD_LOGIC; 
+        ir_istore, ir_mload, ir_madd:	in  STD_LOGIC;
+        </pre>
+<pre>    	iar_enA, iar_ld: 			out STD_LOGIC;
+    	acc_enD, acc_ld, acc_selAlu: 	out STD_LOGIC;
+    	alu_accZ: 			in  STD_LOGIC;
+    	alu_op: 			out STD_LOGIC_VECTOR(1 downto 0)
+    );
+end controller;</pre>
+<pre>architecture controllerArch of controller is
+type state_type is (	reset_state,
+			fetch0, fetch1,
+			load0, load1,
+			store0, store1,
+			add0, add1,
+			negate0, negate1,
+			halt,
+			branch0, branch1,
+			cbranch0, cbranch1,
+			iload0, iload1, iload2, iload3,
+			istore0, istore1, istore2, istore3,
+			mload0, mload1,
+			madd0, madd1
+			);
+signal state: state_type;
+			</pre>
+<pre>begin
+  process(clk) begin
+  	if clk'event and clk = '1' then
+  		if reset = '1' then state &lt;= reset_state;
+    		else
+    			case state is
+    			when reset_state =&gt; state &lt;= fetch0;
+    			when fetch0 =&gt; state &lt;= fetch1;
+	  		when fetch1 =&gt;
+	  			if ir_load = '1' then state &lt;= load0;
+	  			elsif ir_store   = '1' then state &lt;= store0;
+	  			elsif ir_add     = '1' then state &lt;= add0;
+	  			elsif ir_neg     = '1' then state &lt;= negate0;
+	  			elsif ir_halt    = '1' then state &lt;= halt;
+	  			elsif ir_branch  = '1' then state &lt;= branch0;
+	  			elsif ir_cbranch = '1' then state &lt;= cbranch0;
+	  			elsif ir_iload   = '1' then state &lt;= iload0;
+	  			elsif ir_istore  = '1' then state &lt;= istore0;
+	  			elsif ir_mload   = '1' then state &lt;= mload0;
+	  			elsif ir_madd    = '1' then state &lt;= madd0;
+	  			end if;</pre>
+<pre>  			when load0 =&gt; 	state &lt;= load1;
+  			when load1 =&gt; 	state &lt;= fetch0;</pre>
+<pre>			when store0 =&gt; 	state &lt;= store1;
+	  		when store1 =&gt;	state &lt;= fetch0;
+  		</pre>
+<pre>  			when add0 =&gt; 	state &lt;= add1;
+  			when add1 =&gt; 	state &lt;= fetch0;
+  		</pre>
+<pre>  			when negate0 =&gt; state &lt;= negate1;
+  			when negate1 =&gt; state &lt;= fetch0;
+  		</pre>
+<pre>  			when halt =&gt; 	state &lt;= halt;
+  		</pre>
+<pre>  			when branch0 =&gt; state &lt;= branch1;	
+  			when branch1 =&gt; state &lt;= fetch0;</pre>
+<pre>  			when cbranch0 =&gt; state &lt;= cbranch1;
+  			when cbranch1 =&gt; state &lt;= fetch0;
+  	</pre>
+<pre>  			when iload0 =&gt; 	state &lt;= iload1;
+  			when iload1 =&gt; 	state &lt;= iload2;
+  			when iload2 =&gt; 	state &lt;= iload3;
+  			when iload3 =&gt; 	state &lt;= fetch0;
+  		</pre>
+<pre>  			when istore0 =&gt; state &lt;= istore1;
+  			when istore1 =&gt; state &lt;= istore2;
+  			when istore2 =&gt;	state &lt;= istore3;
+  			when istore3 =&gt;	state &lt;= fetch0;
+  		</pre>
+<pre>  			when mload0 =&gt; 	state &lt;= mload1;
+  			when mload1 =&gt; 	state &lt;= fetch0;
+  		</pre>
+<pre>  			when madd0 =&gt; 	state &lt;= madd1;
+  			when madd1 =&gt; 	state &lt;= fetch0;
+  			when others =&gt; 	state &lt;= halt;
+  			end case;
+  		end if;
+  	end if;
+  end process;
+  process(clk) begin -- special process for memory write timing
+  	if clk'event and clk = '0' then
+  		if state = store0 or state = istore2 then
+  			mem_rw &lt;= '0';
+  		else
+  			mem_rw &lt;= '1';
+  		end if;
+  	end if;
+  end process;
+  </pre>
+<pre>  mem_enD &lt;= '1'   when state =  fetch0 or state =  fetch1 or
+  			state =   load0 or state =   load1 or
+  			state =    add0 or state =    add1 or
+  			state =  iload0 or state =  iload1 or
+  			state =  iload2 or state =  iload3 or
+  			state = istore0 or state = istore1
+  		   else '0';
+  pc_enA &lt;= '1'    when state =  fetch0 or state = fetch1
+  		   else '0';
+  pc_ld &lt;= '1'	   when state = branch0 or (state = cbranch0 and alu_accZ = '1')
+  		   else '0';
+  pc_inc &lt;= '1'	   when state = fetch1
+  		   else '0';
+  ir_enA &lt;= '1'	   when state = load0 or state = load1 or
+  			state = store0 or state =  store1 or
+  			state =  add0 or state =  add1 or
+  			state = iload0 or state = iload1 or
+  			state = istore0 or state = istore1
+  		   else '0';
+  ir_enD &lt;= '1'	   when state = branch0 or state = cbranch0 or state = mload0 or
+  		 	state =   madd0 or state =    madd1
+  		   else '0';
+  ir_ld &lt;= '1'	   when state = fetch1
+  		   else '0';
+  iar_enA &lt;= '1'   when state = iload2 or state = iload3 or
+  			state = istore2 or state = istore3
+  		   else '0';
+  iar_ld &lt;= '1'	   when state = iload1 or state = istore1
+  		   else '0';
+  acc_enD &lt;= '1'   when state =  store0 or state =  store1 or
+  			state = istore2 or state = istore3
+  		   else '0';
+  acc_ld &lt;= '1'    when state =  load1 or state =   add1 or state = negate1 or
+  			state = iload3 or state = mload0 or state =   madd1
+  		   else '0';
+  acc_selAlu &lt;='1' when state = add1 or state = negate1 or state = madd1
+  		   else '0';
+  alu_op &lt;= &quot;01&quot;   when state =  add0 or state =  add1 or
+  			state = madd0 or state = madd1
+  		   else &quot;00&quot;;
+end controllerArch;</pre>
+<pre>---------------------------------------------------------</pre>
+<pre>library IEEE;
+use IEEE.std_logic_1164.all;</pre>
+<pre>entity top_level is
+    port (
+        clk, reset:			in  STD_LOGIC;
+        abusX: 				out STD_LOGIC_VECTOR(15 downto 0);
+        dbusX: 				out STD_LOGIC_VECTOR(15 downto 0);
+        mem_enDX, mem_rwX: 		out STD_LOGIC;
+        pc_enAX, pc_ldX, pc_incX:	out STD_LOGIC;
+        ir_enAX, ir_enDX, ir_ldX:	out STD_LOGIC;
+        iar_enAX, iar_ldX:		out STD_LOGIC;
+        acc_enDX, acc_ldX, acc_selAluX:	out STD_LOGIC;
+        acc_QX:				out STD_LOGIC_VECTOR(15 downto 0);
+        alu_accZX:			out STD_LOGIC;
+        alu_opX:			out STD_LOGIC_VECTOR(1 downto 0)
+    );
+end top_level;</pre>
+<pre>architecture topArch of top_level is</pre>
+<pre>component program_counter
+    port (
+        clk, en_A, ld, inc, reset: in STD_LOGIC;
+        aBus: out STD_LOGIC_VECTOR(15 downto 0);
+        dBus: in STD_LOGIC_VECTOR(15 downto 0)
+    );
+end component;</pre>
+<pre>component instruction_register
+    port (
+        clk, en_A, en_D, ld, reset: in STD_LOGIC;
+        aBus: out STD_LOGIC_VECTOR(15 downto 0);
+        dBus: inout STD_LOGIC_VECTOR(15 downto 0);
+        load, store, add, neg, halt, branch: out STD_LOGIC;
+        cbranch, iload, istore, dload, dadd: out STD_LOGIC
+    );
+end component;</pre>
+<pre>component indirect_addr_register
+    port (
+        clk, en_A, ld, reset: in STD_LOGIC;
+        aBus: out STD_LOGIC_VECTOR(15 downto 0);
+        dBus:  in STD_LOGIC_VECTOR(15 downto 0)
+    );
+end component;</pre>
+<pre>component accumulator
+    port (
+        clk, en_D, ld, selAlu, reset: in STD_LOGIC;
+        aluD: in STD_LOGIC_VECTOR(15 downto 0);
+        dBus: inout STD_LOGIC_VECTOR(15 downto 0);
+        q: out STD_LOGIC_VECTOR(15 downto 0)
+    );
+end component;</pre>
+<pre>component alu
+    port (
+        op: in STD_LOGIC_VECTOR(1 downto 0);
+        accD: in STD_LOGIC_VECTOR(15 downto 0);
+        dBus: in STD_LOGIC_VECTOR(15 downto 0);
+        result: out STD_LOGIC_VECTOR(15 downto 0);
+        accZ: out STD_LOGIC
+    );
+end component;</pre>
+<pre>component ram
+    port (
+        r_w, en, reset: in STD_LOGIC;
+        aBus: in STD_LOGIC_VECTOR(15 downto 0);
+        dBus: inout STD_LOGIC_VECTOR(15 downto 0)
+    );
+end component;</pre>
+<pre>component controller
+    port (
+    	clk, reset:			in  STD_LOGIC;
+    	mem_enD, mem_rw: 		out STD_LOGIC;
+    	pc_enA, pc_ld, pc_inc: 		out STD_LOGIC;   	
+    	ir_enA, ir_enD, ir_ld: 		out STD_LOGIC;
+    	ir_load, ir_store, ir_add:	in  STD_LOGIC;
+	ir_neg, ir_halt, ir_branch: 	in  STD_LOGIC;
+        ir_cbranch, ir_iload:		in  STD_LOGIC; 
+        ir_istore, ir_mload, ir_madd:	in  STD_LOGIC;       
+    	iar_enA, iar_ld: 		out STD_LOGIC;
+    	acc_enD, acc_ld, acc_selAlu: 	out STD_LOGIC;
+    	alu_accZ: 			in  STD_LOGIC;
+    	alu_op: 			out STD_LOGIC_VECTOR(1 downto 0)
+    );
+end component;</pre>
+<pre>signal	abus: 				STD_LOGIC_VECTOR(15 downto 0);
+signal	dbus: 				STD_LOGIC_VECTOR(15 downto 0);
+signal	mem_enD, mem_rw: 		STD_LOGIC;
+signal	pc_enA, pc_ld, pc_inc:		STD_LOGIC;
+signal	ir_enA, ir_enD, ir_ld:		STD_LOGIC;
+signal	ir_load, ir_store, ir_add:	STD_LOGIC;
+signal	ir_negate, ir_halt, ir_branch:	STD_LOGIC;
+signal	ir_cbranch, ir_iload, ir_istore:STD_LOGIC;
+signal	ir_mload, ir_sub:		STD_LOGIC;
+signal	iar_enA, iar_ld:		STD_LOGIC;
+signal	acc_enD, acc_ld, acc_selAlu:	STD_LOGIC;
+signal	acc_Q:				STD_LOGIC_VECTOR(15 downto 0);
+signal	alu_op:				STD_LOGIC_VECTOR(1 downto 0);
+signal	alu_accZ:			STD_LOGIC;
+signal	alu_result:			STD_LOGIC_VECTOR(15 downto 0);</pre>
+<pre>begin</pre>
+<pre>  pc: program_counter port map(clk, pc_enA, pc_ld, pc_inc, reset, abus, dbus);
+  </pre>
+<pre>  ir: instruction_register port map(clk, ir_enA, ir_enD, ir_ld, reset, abus, dbus,
+  					 ir_load, ir_store, ir_add,
+  					 ir_negate, ir_halt, ir_branch,
+  					 ir_cbranch, ir_iload, ir_istore,
+  					 ir_mload, ir_sub);
+  					 </pre>
+<pre>  iar: indirect_addr_register port map(clk, iar_enA, iar_ld, reset, abus, dbus);
+  </pre>
+<pre>  acc: accumulator port map(clk, acc_enD, acc_ld, acc_selAlu, reset, alu_result, dbus, acc_Q);
+  </pre>
+<pre>  aluu: alu port map(alu_op, acc_Q, dbus, alu_result, alu_accZ);
+  </pre>
+<pre>  mem: ram port map(mem_rw, mem_enD, reset, abus, dbus);
+  </pre>
+<pre>  ctl: controller port map(clk, reset, mem_enD, mem_rw, pc_enA, pc_ld, pc_inc,
+  				ir_enA, ir_enD, ir_ld, ir_load, ir_store, ir_add,
+  				ir_negate, ir_halt, ir_branch, ir_cbranch, ir_iload,
+  				ir_istore, ir_mload, ir_sub,
+  				iar_enA, iar_ld, acc_enD, acc_ld, acc_selAlu,
+  				alu_accZ, alu_op);
+  				</pre>
+<pre>   abusX &lt;= abus;
+   dbusX &lt;= dbus;
+   mem_enDX &lt;= mem_enD;
+   mem_rwX &lt;= mem_rw;
+   pc_enAX &lt;= pc_enA;
+   pc_ldX &lt;= pc_ld;
+   pc_incX &lt;= pc_inc;
+   ir_enAX &lt;= ir_enA;
+   ir_enDX &lt;= ir_enD;
+   ir_ldX &lt;= ir_ld;
+   iar_enAX &lt;= iar_enA;
+   iar_ldX &lt;= iar_ld;
+   acc_enDX &lt;= acc_enD;
+   acc_ldX &lt;= acc_ld;
+   acc_selAluX &lt;= acc_selAlu;
+   acc_QX &lt;= acc_Q;
+   alu_opX &lt;= alu_op;
+   alu_accZX &lt;= alu_accZ;
+end topArch;</pre>
+<p>
+&nbsp;
+<p>
+<pre>
+</pre>
+</body>
+</html>

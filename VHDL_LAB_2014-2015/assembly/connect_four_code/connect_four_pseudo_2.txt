@@ -1,0 +1,206 @@
+board_rows=6;
+board_columns=7;
+
+player1=01;
+player2=11;
+
+horizontal_sum=0;
+vertical_sum=0;
+diagonal_sum=0;
+
+player1_sum=0;
+player2_sum=0;
+
+//each word is a "stone"
+
+
+// ------------winning conditions-----------------
+
+//player1_sum=reg5
+//player2_sum=reg6
+
+//------------horizontal------------
+for (k = 0; k < board_rows; k ++){
+  for (i = 0; i < board_columns; i ++)
+    if mem_line[(7*k)+i]=player1 then {
+      player2_sum=0;
+      player1_sum++;
+      if player1_sum=4 then player1_win();
+    }
+    if mem_line[(7*k)+i]=player2 then {
+      player1_sum=0;
+      player2_sum++;
+      if player2_sum=4 then player2_win();
+    }
+    if mem_line[(7*k)+i]=empty then {
+      player1_sum=0;
+      player2_sum=0;
+    }
+}
+
+//-----------vertical----------
+for (i = 0; i < board_columns; i ++){
+  for (k = 0; k<board_rows; k ++){
+    if mem_line[k*7+i]=player1 then {
+      player2_sum=0;
+      player1_sum++;
+      if player1_sum=4 then player1_win();
+    }
+    if mem_line[k*7+i]=player2 then {
+      player1_sum=0;
+      player2_sum++;
+      if player2_sum=4 then player2_win();
+    }
+    if mem_line[k*7+i]=empty then {
+      player1_sum=0;
+      player2_sum=0;
+    }
+  }
+}
+
+//-------diagonal /  ---------
+//diagonal   /  no.1  and no.6
+
+k=3;  and for k=18;
+for (i = 0; i < 4; i++) ///diagonal length = 4
+  if mem_line[k+i*6]=player1 then {
+    player2_sum=0;
+    player1_sum++;
+    if player1_sum=4 then player1_win();
+  }
+  if mem_line[k+i*6]=player2 then {
+    player1_sum=0;
+    player2_sum++;
+    if player2_sum=4 then player2_win();
+  }
+  if mem_line[k+i*6]=empty then {
+    player1_sum=0;
+    player2_sum=0;
+  }
+}
+
+//diagonal   /  no.2  and no.5
+k=4;    and  for  k=12;
+for (i = 0; i < 5; i++) ///diagonal length = 5
+  if mem_line[k+i*6]=player1 then {
+    player2_sum=0;
+    player1_sum++;
+    if player1_sum=4 then player1_win();
+  }
+  if mem_line[k+i*6]=player2 then {
+    player1_sum=0;
+    player2_sum++;
+    if player2_sum=4 then player2_win();
+  }
+  if mem_line[k+i*6]=empty then {
+    player1_sum=0;
+    player2_sum=0;
+  }
+}
+
+//diagonal   /  no.3  and no.4
+k=5  and for k=6;
+for (i = 0; i < 6; i++) ///diagonal length = 6
+  if mem_line[k+i*6]=player1 then {
+    player2_sum=0;
+    player1_sum++;
+    if player1_sum=4 then player1_win();
+  }
+  if mem_line[k+i*6]=player2 then {
+    player1_sum=0;
+    player2_sum++;
+    if player2_sum=4 then player2_win();
+  }
+  if mem_line[k+i*6]=empty then {
+    player1_sum=0;
+    player2_sum=0;
+  }
+}
+
+
+
+//------diagonal \ -----
+//diagonal   \  no.1  and no.6
+k=14;  and for k=3;
+for (i = 0; i < 4; i++) ///diagonal length = 4
+  if mem_line[k+i*8]=player1 then {
+    player2_sum=0;
+    player1_sum++;
+    if player1_sum=4 then player1_win();
+  }
+  if mem_line[k+i*8]=player2 then {
+    player1_sum=0;
+    player2_sum++;
+    if player2_sum=4 then player2_win();
+  }
+  if mem_line[k+i*8]=empty then {
+    player1_sum=0;
+    player2_sum=0;
+  }
+}
+
+//diagonal   \  no.2  and no.5
+k=7;    and  for  k=2;
+for (i = 0; i < 5; i++) ///diagonal length = 5
+  if mem_line[k+i*8]=player1 then {
+    player2_sum=0;
+    player1_sum++;
+    if player1_sum=4 then player1_win();
+  }
+  if mem_line[k+i*8]=player2 then {
+    player1_sum=0;
+    player2_sum++;
+    if player2_sum=4 then player2_win();
+  }
+  if mem_line[k+i*8]=empty then {
+    player1_sum=0;
+    player2_sum=0;
+  }
+}
+
+//diagonal   \  no.3  and no.4
+k=0  and for k=1;
+for (i = 0; i < 6; i++) ///diagonal length = 6
+  if mem_line[k+i*8]=player1 then {
+    player2_sum=0;
+    player1_sum++;
+    if player1_sum=4 then player1_win();
+  }
+  if mem_line[k+i*8]=player2 then {
+    player1_sum=0;
+    player2_sum++;
+    if player2_sum=4 then player2_win();
+  }
+  if mem_line[k+i*8]=empty then {
+    player1_sum=0;
+    player2_sum=0;
+  }
+}
+//-----------------winning conditions end--------------------
+
+
+
+
+//-----------------board filling-----------------------------
+
+
+//COL is input from fpga which the stone is put in
+
+for (k = 0; k < board_rows; k ++){
+  if mem_line[board_rows-1+COL]!=0 then{
+    //ask for other column cause full
+  }
+  if mem_line[k+COL]=0 then {
+    mem_line[k+COL]=player1/player2;
+    break;
+  }
+}
+
+
+player1_win(){
+ print player1 is winner
+}
+
+player2_win(){
+ print player2 is winner
+}

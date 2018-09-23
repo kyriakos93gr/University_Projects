@@ -1,0 +1,7 @@
+
+State Machine - |toplevel|paneldisplay:disp|state
+Name state.print state.fetch state.send_add state.idle 
+state.idle 0 0 0 0 
+state.send_add 0 0 1 1 
+state.fetch 0 1 0 1 
+state.print 1 0 0 1 

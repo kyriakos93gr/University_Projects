@@ -1,0 +1,31 @@
+/home/kyriakos/git/vlsi/Lab3_ROM/modelsim/rom.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab3_ROM/modelsim/rom.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity char_rom
+-- Compiling architecture RTL of char_rom
+
+} {} {}} /home/kyriakos/git/vlsi/Lab3_ROM/modelsim/tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab3_ROM/modelsim/tb.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb
+-- Compiling architecture test of tb
+
+} {} {}} /home/kyriakos/git/vlsi/Lab3_ROM/modelsim/toplevel.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/kyriakos/git/vlsi/Lab3_ROM/modelsim/toplevel.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity toplevel
+-- Compiling architecture bhv of toplevel
+
+} {} {}}

@@ -1,0 +1,151 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity paneldisplay is
+  port (clk : in std_logic;
+  rst       : in std_logic;
+  hsync     : out std_logic;
+  vsync     : out std_logic;
+  address   : out  std_logic_vector(7 downto 0);   -- 256 addresses in total
+  data      : in std_logic_vector(63 downto 0);  -- 64 bits/address
+  red       : out std_logic_vector(3 downto 0);
+  green     : out std_logic_vector(3 downto 0);
+  blue      : out std_logic_vector(3 downto 0));
+end paneldisplay;
+
+architecture syncing of PanelDisplay is
+
+constant HP:  integer:=640;
+constant HFP: integer:=16 ;
+constant HBP: integer:=48 ;
+constant HSP: integer:=96 ;
+constant VP:  integer:=480;
+constant VFP: integer:=10 ;
+constant VBP: integer:=33 ;
+constant VSP: integer:=2  ;
+
+signal a,b          : std_logic;
+signal pixelclock   : std_logic;
+signal pixelcounter : std_logic_vector(9 downto 0);
+signal linecounter  : std_logic_vector(9 downto 0);
+signal reg          : std_logic_vector(63 downto 0);
+signal reg_counter  : std_logic_vector(5 downto 0);
+type fsm_state is (idle, send_add, fetch, print);
+signal state: fsm_state;
+
+begin
+--reset and a<=b
+  process(clk,rst)
+  begin
+	  if rst='0' then
+		 a<='0';
+	  elsif	rising_edge(clk) then
+		 a<=b;
+	  end if;
+  end process;
+
+  b <= not a;
+  pixelclock <= a;
+
+  --hsync
+  hsync<='0' when pixelcounter>=(HP+HFP) and pixelcounter<=(HP+HFP+HSP-1) else '1';
+
+  --vsync
+  vsync<='0' when linecounter>=(VP+VFP) and linecounter<=(VP+VFP+VSP-1) else '1';
+
+
+  characters:process(clk,rst)
+  begin
+    if rst='0' then
+      address<=(others=>'0');
+      reg_counter<=(others=>'1');
+      red<=(others=>'0');
+      green<=(others=>'0');
+      blue<=(others=>'0');
+      state<=idle;
+    elsif rising_edge(clk) then
+      
+		case state is
+        when idle =>
+        red<=(others=>'0');
+        green<=(others=>'0');
+        blue<=(others=>'0');
+          --reg_counter<=(others=>'0');
+	if linecounter >=100 and linecounter<150 then
+          if (pixelcounter=120) then-- or pixelcounter=(520)) and (linecounter>(100) and linecounter<=(148)) then
+            state <= send_add;
+          end if;
+end if;
+        when send_add =>
+          if pixelcounter<(320) then
+            address<=linecounter(7 downto 0)-(100);
+          elsif pixelcounter<(520) then
+            address<=linecounter(7 downto 0)-(100)+(48);
+          else
+            address<=linecounter(7 downto 0)-(100)+(96);
+          end if;
+			 address<="01100000";
+          state <= fetch;
+        when fetch =>
+          reg<=data;
+          reg_counter <= (others=>'0');
+			 state <= print;
+        when print =>
+		  if pixelclock='1' then
+          if reg(conv_integer(reg_counter))='1' then--to_integer(unsigned(reg_counter)))='1' then
+            red<=(others=>'1');
+            green<=(others=>'1');
+            blue<=(others=>'1');
+          else
+            red<=(others=>'0');
+            green<=(others=>'0');
+            blue<=(others=>'0');
+          end if;
+          reg_counter<=reg_counter+1;
+          if reg_counter=50 then
+	         state<=idle;
+				red<=(others=>'0');
+            green<=(others=>'0');
+            blue<=(others=>'0');
+          end if;
+			 end if;
+      end case;
+    end if;
+  end process;
+  --send  color
+  process(clk,rst)
+  begin
+    --horizontal line
+   if rst='0' then
+    pixelcounter<=(others=>'0');
+    elsif rising_edge(clk) then
+     if pixelclock='1' then
+      if pixelcounter<=(HP+HFP+HSP+HBP-1) then
+        pixelcounter<=pixelcounter+1;
+      else
+        pixelcounter<=(others=>'0');
+      end if;
+    end if;
+  end if;
+  end process;
+
+  process(clk,rst)
+  begin
+  if rst='0' then
+    linecounter<=(others=>'0');
+  elsif rising_edge(clk) then
+   if pixelclock='1' then
+    if pixelcounter=(HP+HFP+HSP+HBP-1) then
+    linecounter<=linecounter+1;
+    end if;
+   end if;
+   if linecounter=(VP+VFP+VSP+VBP-1) then
+    linecounter<=(others=>'0');
+  end if;
+  end if;
+ end process;
+
+end syncing;
+
