@@ -1,0 +1,6 @@
+\\VBOXSVR\programs\ergasia\GSA2\GSA2\bin\Debug\GSA2.exe.config
+\\VBOXSVR\programs\ergasia\GSA2\GSA2\bin\Debug\GSA2.exe
+\\VBOXSVR\programs\ergasia\GSA2\GSA2\bin\Debug\GSA2.pdb
+\\VBOXSVR\programs\ergasia\GSA2\GSA2\obj\Debug\GSA2.csprojResolveAssemblyReference.cache
+\\VBOXSVR\programs\ergasia\GSA2\GSA2\obj\Debug\GSA2.exe
+\\VBOXSVR\programs\ergasia\GSA2\GSA2\obj\Debug\GSA2.pdb
